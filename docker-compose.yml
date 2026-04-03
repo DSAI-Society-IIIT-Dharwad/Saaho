@@ -1,0 +1,28 @@
+# ROS 2 Humble + TurtleBot3 Gazebo with host X11 (Gazebo GUI / RViz) + GPU support.
+# Host first: ./scripts/host-allow-docker-x11.sh && export DISPLAY=:0
+services:
+  ros2:
+    build:
+      context: .
+      dockerfile: DockerFile
+    container_name: ros2_container
+    network_mode: host
+    environment:
+      DISPLAY: "${DISPLAY:-:0}"
+      QT_X11_NO_MITSHM: "1"
+      TURTLEBOT3_MODEL: burger
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - .:/workspace:rw
+    stdin_open: true
+    tty: true
+    command: sleep infinity
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
