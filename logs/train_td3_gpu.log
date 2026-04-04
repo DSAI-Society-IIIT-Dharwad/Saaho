@@ -1,0 +1,1044 @@
+[INFO] [1775154069.280739148] [drl_env]: Env node ready ✅
+TD3Agent on device: cuda
+State dim: 26  |  Action dim: 2
+Linear vel: [0.0, 0.22]  Angular vel: [-2.0, 2.0]
+/root/drone_rl/agent_td3.py:234: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(path, map_location=self.device)
+TD3 model loaded ← model_td3.pt
+Resuming from saved TD3 model 🔄
+
+=======================================================
+ TurtleBot3 TD3 Training  |  1000 episodes
+=======================================================
+
+[WARN] [1775154072.483991445] [drl_env]: /reset_world not ready — skipping reset
+[Ep    1] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154084.847509617] [drl_env]: /reset_world not ready — skipping reset
+[Ep    2] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154097.214192524] [drl_env]: /reset_world not ready — skipping reset
+[Ep    3] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154109.578446501] [drl_env]: /reset_world not ready — skipping reset
+[Ep    4] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154121.940845938] [drl_env]: /reset_world not ready — skipping reset
+[Ep    5] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154134.307954945] [drl_env]: /reset_world not ready — skipping reset
+[Ep    6] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154146.673705137] [drl_env]: /reset_world not ready — skipping reset
+[Ep    7] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154159.034071755] [drl_env]: /reset_world not ready — skipping reset
+[Ep    8] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154171.403478461] [drl_env]: /reset_world not ready — skipping reset
+[Ep    9] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154183.768742270] [drl_env]: /reset_world not ready — skipping reset
+[Ep   10] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154196.133284699] [drl_env]: /reset_world not ready — skipping reset
+[Ep   11] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154208.498700963] [drl_env]: /reset_world not ready — skipping reset
+[Ep   12] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154220.860214217] [drl_env]: /reset_world not ready — skipping reset
+[Ep   13] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154233.224006874] [drl_env]: /reset_world not ready — skipping reset
+[Ep   14] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154245.588259586] [drl_env]: /reset_world not ready — skipping reset
+[Ep   15] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154257.949934836] [drl_env]: /reset_world not ready — skipping reset
+[Ep   16] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154270.316851273] [drl_env]: /reset_world not ready — skipping reset
+[Ep   17] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154282.676804127] [drl_env]: /reset_world not ready — skipping reset
+[Ep   18] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154295.040090511] [drl_env]: /reset_world not ready — skipping reset
+[Ep   19] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154307.406103183] [drl_env]: /reset_world not ready — skipping reset
+[Ep   20] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154319.769766000] [drl_env]: /reset_world not ready — skipping reset
+[Ep   21] ⚠  No sensor data — is Gazebo running?
+[WARN] [1775154332.134935345] [drl_env]: /reset_world not ready — skipping reset
+[WARN] [1775154348.708164210] [drl_env]: 💥 Collision!
+[WARN] [1775154369.936976046] [drl_env]: 💥 Collision!
+[WARN] [1775154393.709508490] [drl_env]: 💥 Collision!
+[WARN] [1775154402.325128208] [drl_env]: 💥 Collision!
+[WARN] [1775154456.464277671] [drl_env]: 💥 Collision!
+[WARN] [1775154463.119628016] [drl_env]: 💥 Collision!
+[WARN] [1775154469.350831304] [drl_env]: 💥 Collision!
+[WARN] [1775154496.627933636] [drl_env]: 💥 Collision!
+[Ep   30/1000]  avg_reward= -501.67  critic_loss=20.7469  actor_loss=173.3588  steps=1813
+[WARN] [1775154575.317891371] [drl_env]: 💥 Collision!
+[WARN] [1775154616.297641515] [drl_env]: 💥 Collision!
+[WARN] [1775154624.688070966] [drl_env]: 💥 Collision!
+[WARN] [1775154634.520283388] [drl_env]: 💥 Collision!
+[WARN] [1775154643.985117251] [drl_env]: 💥 Collision!
+[WARN] [1775154657.582463927] [drl_env]: 💥 Collision!
+[WARN] [1775154665.822883744] [drl_env]: 💥 Collision!
+[WARN] [1775154675.815313851] [drl_env]: 💥 Collision!
+[Ep   40/1000]  avg_reward= -675.73  critic_loss=14.3779  actor_loss=180.9368  steps=4356
+[WARN] [1775154768.344365498] [drl_env]: 💥 Collision!
+[WARN] [1775154775.798801596] [drl_env]: 💥 Collision!
+[WARN] [1775154799.229043748] [drl_env]: 💥 Collision!
+[WARN] [1775154805.867813902] [drl_env]: 💥 Collision!
+[WARN] [1775155013.930382164] [drl_env]: 💥 Collision!
+[Ep   50/1000]  avg_reward= -680.31  critic_loss=66.5459  actor_loss=177.4631  steps=7813
+TD3 model saved → model_td3_ep50.pt
+TD3 model saved → model_td3.pt
+[WARN] [1775155111.179325642] [drl_env]: 💥 Collision!
+[WARN] [1775155139.773223837] [drl_env]: 💥 Collision!
+[WARN] [1775155258.980962266] [drl_env]: 💥 Collision!
+[WARN] [1775155315.104051913] [drl_env]: 💥 Collision!
+[Ep   60/1000]  avg_reward= -731.44  critic_loss=58.3637  actor_loss=173.6128  steps=11819
+[WARN] [1775155411.527398178] [drl_env]: 💥 Collision!
+[Ep   70/1000]  avg_reward= -673.57  critic_loss=33.3215  actor_loss=168.5650  steps=16447
+[Ep   80/1000]  avg_reward= -703.47  critic_loss=40.7113  actor_loss=163.1828  steps=21447
+[WARN] [1775156476.096224450] [drl_env]: 💥 Collision!
+[Ep   90/1000]  avg_reward= -660.43  critic_loss=43.9630  actor_loss=158.0618  steps=26447
+[WARN] [1775156643.372732732] [drl_env]: 💥 Collision!
+[WARN] [1775156711.932694706] [drl_env]: 💥 Collision!
+[WARN] [1775156784.652630368] [drl_env]: 💥 Collision!
+[WARN] [1775156834.612579678] [drl_env]: 💥 Collision!
+[WARN] [1775156863.684429977] [drl_env]: 💥 Collision!
+[WARN] [1775156944.564850667] [drl_env]: 💥 Collision!
+[Ep  100/1000]  avg_reward= -718.92  critic_loss=29.2166  actor_loss=155.7936  steps=30412
+TD3 model saved → model_td3_ep100.pt
+TD3 model saved → model_td3.pt
+[WARN] [1775157105.492873119] [drl_env]: 💥 Collision!
+[WARN] [1775157183.629792709] [drl_env]: 💥 Collision!
+[WARN] [1775157219.458478564] [drl_env]: 💥 Collision!
+[WARN] [1775157290.649263984] [drl_env]: 💥 Collision!
+[Ep  110/1000]  avg_reward= -719.91  critic_loss=41.7264  actor_loss=154.2655  steps=34943
+[WARN] [1775157364.988993672] [drl_env]: 💥 Collision!
+[WARN] [1775157389.051123851] [drl_env]: 💥 Collision!
+[WARN] [1775157417.886930318] [drl_env]: 💥 Collision!
+[WARN] [1775157443.342671781] [drl_env]: 💥 Collision!
+[WARN] [1775157601.020534398] [drl_env]: 💥 Collision!
+[Ep  120/1000]  avg_reward= -665.68  critic_loss=30.9713  actor_loss=152.3534  steps=39054
+[WARN] [1775157836.274098211] [drl_env]: 💥 Collision!
+[INFO] [1775158091.739888068] [drl_env]: 🎯 Goal reached!
+[Ep  130/1000]  avg_reward= -567.94  critic_loss=25.8035  actor_loss=148.0822  steps=43783
+[WARN] [1775158295.502649294] [drl_env]: 💥 Collision!
+[WARN] [1775158406.719058990] [drl_env]: 💥 Collision!
+[WARN] [1775158429.777888152] [drl_env]: 💥 Collision!
+[Ep  140/1000]  avg_reward= -613.37  critic_loss=33.3192  actor_loss=145.5861  steps=48253
+[WARN] [1775158547.416906084] [drl_env]: 💥 Collision!
+[WARN] [1775158672.433115381] [drl_env]: 💥 Collision!
+[WARN] [1775158706.679209415] [drl_env]: 💥 Collision!
+[WARN] [1775158783.411417934] [drl_env]: 💥 Collision!
+[INFO] [1775158820.522724203] [drl_env]: 🎯 Goal reached!
+[INFO] [1775158863.231508673] [drl_env]: 🎯 Goal reached!
+[Ep  150/1000]  avg_reward= -623.09  critic_loss=24.8801  actor_loss=142.6304  steps=52899
+TD3 model saved → model_td3_ep150.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775158903.256383963] [drl_env]: 🎯 Goal reached!
+[WARN] [1775158918.539781690] [drl_env]: 💥 Collision!
+[INFO] [1775158961.222604161] [drl_env]: 🎯 Goal reached!
+[INFO] [1775159216.271333523] [drl_env]: 🎯 Goal reached!
+[Ep  160/1000]  avg_reward= -507.49  critic_loss=25.7348  actor_loss=140.1679  steps=57505
+[INFO] [1775159299.901206493] [drl_env]: 🎯 Goal reached!
+[INFO] [1775159643.573991250] [drl_env]: 🎯 Goal reached!
+[WARN] [1775159675.811808608] [drl_env]: 💥 Collision!
+[Ep  170/1000]  avg_reward= -548.79  critic_loss=38.0520  actor_loss=136.2326  steps=62347
+[INFO] [1775159932.164739156] [drl_env]: 🎯 Goal reached!
+[WARN] [1775160048.249665611] [drl_env]: 💥 Collision!
+[Ep  180/1000]  avg_reward= -549.75  critic_loss=42.9797  actor_loss=134.1080  steps=67187
+[WARN] [1775160277.313921813] [drl_env]: 💥 Collision!
+[Ep  190/1000]  avg_reward= -547.11  critic_loss=39.0429  actor_loss=131.0898  steps=71841
+[WARN] [1775160509.352032478] [drl_env]: 💥 Collision!
+[INFO] [1775160549.082920483] [drl_env]: 🎯 Goal reached!
+[INFO] [1775160589.389118036] [drl_env]: 🎯 Goal reached!
+[INFO] [1775160715.352176459] [drl_env]: 🎯 Goal reached!
+[WARN] [1775160746.963473632] [drl_env]: 💥 Collision!
+[INFO] [1775160827.816171124] [drl_env]: 🎯 Goal reached!
+[INFO] [1775160867.911363698] [drl_env]: 🎯 Goal reached!
+[Ep  200/1000]  avg_reward= -480.50  critic_loss=26.6618  actor_loss=128.9701  steps=76190
+TD3 model saved → model_td3_ep200.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775160952.270746811] [drl_env]: 🎯 Goal reached!
+[WARN] [1775160988.205598436] [drl_env]: 💥 Collision!
+[INFO] [1775161029.398008751] [drl_env]: 🎯 Goal reached!
+[INFO] [1775161068.461735059] [drl_env]: 🎯 Goal reached!
+[WARN] [1775161143.309733322] [drl_env]: 💥 Collision!
+[INFO] [1775161180.658390920] [drl_env]: 🎯 Goal reached!
+[INFO] [1775161222.165298039] [drl_env]: 🎯 Goal reached!
+[Ep  210/1000]  avg_reward= -479.99  critic_loss=42.3247  actor_loss=126.8665  steps=80794
+[INFO] [1775161301.695574575] [drl_env]: 🎯 Goal reached!
+[WARN] [1775161416.477015921] [drl_env]: 💥 Collision!
+[INFO] [1775161450.449878413] [drl_env]: 🎯 Goal reached!
+[INFO] [1775161487.319743865] [drl_env]: 🎯 Goal reached!
+[INFO] [1775161521.816804155] [drl_env]: 🎯 Goal reached!
+[WARN] [1775161548.113133779] [drl_env]: 💥 Collision!
+[Ep  220/1000]  avg_reward= -466.94  critic_loss=40.7979  actor_loss=125.3207  steps=85067
+[INFO] [1775161670.116225812] [drl_env]: 🎯 Goal reached!
+[INFO] [1775161708.462346463] [drl_env]: 🎯 Goal reached!
+[INFO] [1775161746.673706603] [drl_env]: 🎯 Goal reached!
+[WARN] [1775161773.293539371] [drl_env]: 💥 Collision!
+[INFO] [1775161813.874216967] [drl_env]: 🎯 Goal reached!
+[INFO] [1775161850.837398430] [drl_env]: 🎯 Goal reached!
+[INFO] [1775161887.871969631] [drl_env]: 🎯 Goal reached!
+[INFO] [1775161924.460814419] [drl_env]: 🎯 Goal reached!
+[INFO] [1775162003.025837465] [drl_env]: 🎯 Goal reached!
+[Ep  230/1000]  avg_reward= -361.87  critic_loss=76.9140  actor_loss=124.0084  steps=89334
+[INFO] [1775162043.449189555] [drl_env]: 🎯 Goal reached!
+[INFO] [1775162127.548569556] [drl_env]: 🎯 Goal reached!
+[INFO] [1775162166.479780545] [drl_env]: 🎯 Goal reached!
+[INFO] [1775162207.498474585] [drl_env]: 🎯 Goal reached!
+[INFO] [1775162247.289323579] [drl_env]: 🎯 Goal reached!
+[INFO] [1775162371.620039631] [drl_env]: 🎯 Goal reached!
+[INFO] [1775162410.727488626] [drl_env]: 🎯 Goal reached!
+[Ep  240/1000]  avg_reward= -381.90  critic_loss=37.0392  actor_loss=122.0356  steps=94059
+[INFO] [1775162446.922161910] [drl_env]: 🎯 Goal reached!
+[WARN] [1775162460.786508335] [drl_env]: 💥 Collision!
+[INFO] [1775162498.233178533] [drl_env]: 🎯 Goal reached!
+[INFO] [1775162537.314085138] [drl_env]: 🎯 Goal reached!
+[WARN] [1775162569.809458521] [drl_env]: 💥 Collision!
+[INFO] [1775162608.790564187] [drl_env]: 🎯 Goal reached!
+[INFO] [1775162732.278016858] [drl_env]: 🎯 Goal reached!
+[Ep  250/1000]  avg_reward= -411.61  critic_loss=52.1270  actor_loss=120.5033  steps=98273
+TD3 model saved → model_td3_ep250.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775162817.369891205] [drl_env]: 🎯 Goal reached!
+[INFO] [1775162943.804235689] [drl_env]: 🎯 Goal reached!
+[WARN] [1775163000.623726908] [drl_env]: 💥 Collision!
+[INFO] [1775163038.239894675] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163072.499832018] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163112.336200514] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163154.596235237] [drl_env]: 🎯 Goal reached!
+[Ep  260/1000]  avg_reward= -358.37  critic_loss=66.4085  actor_loss=117.5613  steps=102665
+[INFO] [1775163193.342866577] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163234.382494254] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163359.898525945] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163398.496962109] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163435.531935484] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163471.865823048] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163504.958598933] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163540.638260403] [drl_env]: 🎯 Goal reached!
+[Ep  270/1000]  avg_reward= -315.82  critic_loss=45.3954  actor_loss=113.6703  steps=107134
+[INFO] [1775163578.279776908] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163610.475271474] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163646.820476666] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163686.371900936] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163724.628731573] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163761.037942844] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163798.335630705] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163835.509194261] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163869.757867734] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163909.837025420] [drl_env]: 🎯 Goal reached!
+[Ep  280/1000]  avg_reward= -264.86  critic_loss=78.1976  actor_loss=110.0279  steps=111398
+[INFO] [1775163950.166392843] [drl_env]: 🎯 Goal reached!
+[INFO] [1775163990.582445043] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164066.280643888] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164103.113943544] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164145.658342779] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164267.356555611] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164307.043664142] [drl_env]: 🎯 Goal reached!
+[Ep  290/1000]  avg_reward= -330.14  critic_loss=57.6806  actor_loss=107.5068  steps=115993
+[INFO] [1775164347.419344916] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164384.577051363] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164426.616775391] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164467.162351866] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164504.311541419] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164542.802693346] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164578.379041182] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164614.561015960] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164649.771834039] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164689.334032552] [drl_env]: 🎯 Goal reached!
+[Ep  300/1000]  avg_reward= -236.53  critic_loss=85.7416  actor_loss=105.0452  steps=120413
+TD3 model saved → model_td3_ep300.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775164725.206350625] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164761.001422033] [drl_env]: 🎯 Goal reached!
+[WARN] [1775164794.275840112] [drl_env]: 💥 Collision!
+[INFO] [1775164832.812464113] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164869.538670567] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164910.566067267] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164950.679257840] [drl_env]: 🎯 Goal reached!
+[INFO] [1775164983.899930473] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165020.039520013] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165054.748982354] [drl_env]: 🎯 Goal reached!
+[Ep  310/1000]  avg_reward= -280.03  critic_loss=61.3503  actor_loss=103.3518  steps=124633
+[INFO] [1775165092.957147407] [drl_env]: 🎯 Goal reached!
+[WARN] [1775165124.364472983] [drl_env]: 💥 Collision!
+[INFO] [1775165157.862463589] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165192.019396096] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165225.611282084] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165257.045739153] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165293.110378114] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165324.392676864] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165353.970392434] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165388.242055663] [drl_env]: 🎯 Goal reached!
+[Ep  320/1000]  avg_reward= -249.60  critic_loss=73.0239  actor_loss=101.0852  steps=128481
+[INFO] [1775165421.432646839] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165457.491476152] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165493.836347622] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165530.156438782] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165563.483412287] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165599.364634592] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165635.358246042] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165669.587515077] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165708.157497734] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165742.099054827] [drl_env]: 🎯 Goal reached!
+[Ep  330/1000]  avg_reward= -208.70  critic_loss=81.5300  actor_loss=98.0964  steps=132567
+[INFO] [1775165774.559639675] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165804.610752091] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165841.786232169] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165878.275096742] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165906.851786671] [drl_env]: 🎯 Goal reached!
+[INFO] [1775165939.858768644] [drl_env]: 🎯 Goal reached!
+[WARN] [1775165964.761270069] [drl_env]: 💥 Collision!
+[INFO] [1775165994.346095831] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166024.091215930] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166057.692712886] [drl_env]: 🎯 Goal reached!
+[Ep  340/1000]  avg_reward= -235.34  critic_loss=101.1312  actor_loss=95.0774  steps=136201
+[INFO] [1775166089.037385314] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166122.928830526] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166151.508331750] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166185.345088251] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166213.021737746] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166241.265310497] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166270.690867217] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166301.774392647] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166329.970517566] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166361.558785418] [drl_env]: 🎯 Goal reached!
+[Ep  350/1000]  avg_reward= -182.32  critic_loss=86.6403  actor_loss=92.5241  steps=139698
+TD3 model saved → model_td3_ep350.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775166395.381604823] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166428.416435770] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166462.497058676] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166494.195564914] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166529.869905019] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166558.614370269] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166589.812403096] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166625.159484305] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166659.331218278] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166692.251146695] [drl_env]: 🎯 Goal reached!
+[Ep  360/1000]  avg_reward= -201.10  critic_loss=66.4679  actor_loss=91.3718  steps=143507
+[INFO] [1775166725.473692801] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166758.640776275] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166787.524319304] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166816.662868880] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166847.824849292] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166879.055427934] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166908.675802739] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166936.378962032] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166967.494823704] [drl_env]: 🎯 Goal reached!
+[INFO] [1775166997.774121797] [drl_env]: 🎯 Goal reached!
+[Ep  370/1000]  avg_reward= -202.93  critic_loss=99.4223  actor_loss=88.9976  steps=147024
+[WARN] [1775167010.311837556] [drl_env]: 💥 Collision!
+[INFO] [1775167039.988798733] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167069.303424225] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167098.650325220] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167128.727572377] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167157.096822249] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167187.904711600] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167218.877757961] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167248.349745689] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167276.621975892] [drl_env]: 🎯 Goal reached!
+[Ep  380/1000]  avg_reward= -213.48  critic_loss=90.5974  actor_loss=86.2445  steps=150229
+[INFO] [1775167306.031363235] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167335.468555779] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167363.342952330] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167391.272441182] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167422.053460794] [drl_env]: 🎯 Goal reached!
+[WARN] [1775167436.114206982] [drl_env]: 💥 Collision!
+[INFO] [1775167465.046715986] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167494.377057353] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167522.471959257] [drl_env]: 🎯 Goal reached!
+[WARN] [1775167538.452520466] [drl_env]: 💥 Collision!
+[Ep  390/1000]  avg_reward= -258.61  critic_loss=75.5448  actor_loss=85.2105  steps=153229
+[INFO] [1775167568.966153480] [drl_env]: 🎯 Goal reached!
+[WARN] [1775167584.984945379] [drl_env]: 💥 Collision!
+[INFO] [1775167613.742941126] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167643.725610531] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167674.053282739] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167703.458909690] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167731.396311052] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167760.193074650] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167788.595951686] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167817.632473668] [drl_env]: 🎯 Goal reached!
+[Ep  400/1000]  avg_reward= -229.77  critic_loss=62.2795  actor_loss=81.8385  steps=156435
+TD3 model saved → model_td3_ep400.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775167846.267795373] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167873.267210234] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167904.810866031] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167930.643262345] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167959.893879026] [drl_env]: 🎯 Goal reached!
+[INFO] [1775167990.072881535] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168018.868187554] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168049.090131086] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168075.432791038] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168106.988105028] [drl_env]: 🎯 Goal reached!
+[Ep  410/1000]  avg_reward= -187.74  critic_loss=47.0435  actor_loss=78.4035  steps=159759
+[INFO] [1775168136.346275013] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168168.805318635] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168201.127429565] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168230.757554987] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168258.198183189] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168287.138570857] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168314.253473691] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168342.880391365] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168373.602778925] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168399.060448633] [drl_env]: 🎯 Goal reached!
+[Ep  420/1000]  avg_reward= -201.76  critic_loss=44.9172  actor_loss=75.9894  steps=163118
+[INFO] [1775168428.129149677] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168454.842194681] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168483.023562836] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168512.671699601] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168541.313724204] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168569.320908309] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168598.376696466] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168626.027761433] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168654.245947698] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168680.453591164] [drl_env]: 🎯 Goal reached!
+[Ep  430/1000]  avg_reward= -197.63  critic_loss=48.4703  actor_loss=73.5012  steps=166348
+[INFO] [1775168708.872352199] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168736.252128153] [drl_env]: 🎯 Goal reached!
+[WARN] [1775168758.059107713] [drl_env]: 💥 Collision!
+[INFO] [1775168791.117528192] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168819.925619283] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168847.391614620] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168876.189582034] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168908.926676487] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168937.382459030] [drl_env]: 🎯 Goal reached!
+[INFO] [1775168967.133298838] [drl_env]: 🎯 Goal reached!
+[Ep  440/1000]  avg_reward= -239.87  critic_loss=31.6848  actor_loss=69.6972  steps=169640
+[INFO] [1775168995.970275957] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169028.229529368] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169053.746041683] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169081.520532239] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169109.431681031] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169136.557401564] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169165.938473637] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169192.288741888] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169221.458531471] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169248.722148541] [drl_env]: 🎯 Goal reached!
+[Ep  450/1000]  avg_reward= -202.64  critic_loss=41.6742  actor_loss=66.0866  steps=172880
+TD3 model saved → model_td3_ep450.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775169274.893756132] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169302.380833445] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169332.642176673] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169362.527857997] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169390.776005470] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169420.479083484] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169449.233925427] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169476.702057330] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169503.202924798] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169532.258385352] [drl_env]: 🎯 Goal reached!
+[Ep  460/1000]  avg_reward= -182.59  critic_loss=41.2177  actor_loss=62.9703  steps=176140
+[INFO] [1775169560.742672922] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169587.496623696] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169615.714126525] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169644.815156082] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169672.474724485] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169699.615395324] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169726.575175417] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169754.825722972] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169784.231060709] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169813.125107234] [drl_env]: 🎯 Goal reached!
+[Ep  470/1000]  avg_reward= -189.64  critic_loss=34.5795  actor_loss=61.3962  steps=179369
+[INFO] [1775169838.511048083] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169866.012466674] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169892.440259015] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169918.632165568] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169948.309401204] [drl_env]: 🎯 Goal reached!
+[INFO] [1775169975.154033257] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170001.645031868] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170027.571579995] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170055.585740520] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170080.632479132] [drl_env]: 🎯 Goal reached!
+[Ep  480/1000]  avg_reward= -170.62  critic_loss=27.5367  actor_loss=60.0730  steps=182437
+[INFO] [1775170108.405230178] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170135.669239886] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170160.546772721] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170188.204806130] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170215.419658012] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170243.144557360] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170271.191346081] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170299.711159215] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170326.408868030] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170353.592750863] [drl_env]: 🎯 Goal reached!
+[Ep  490/1000]  avg_reward= -184.08  critic_loss=24.3735  actor_loss=56.6871  steps=185578
+[INFO] [1775170381.676396389] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170409.350217885] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170434.873772548] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170460.391050424] [drl_env]: 🎯 Goal reached!
+[WARN] [1775170484.007343341] [drl_env]: 💥 Collision!
+[INFO] [1775170511.624441438] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170540.133761532] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170567.137278324] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170591.264155442] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170619.534544559] [drl_env]: 🎯 Goal reached!
+[Ep  500/1000]  avg_reward= -212.08  critic_loss=19.2090  actor_loss=55.4137  steps=188686
+TD3 model saved → model_td3_ep500.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775170646.121027536] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170672.183678093] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170698.693881502] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170723.251907597] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170748.797393435] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170777.728394184] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170803.379479075] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170830.192887022] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170857.033083109] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170884.519208629] [drl_env]: 🎯 Goal reached!
+[Ep  510/1000]  avg_reward= -194.68  critic_loss=22.1189  actor_loss=53.1194  steps=191747
+[INFO] [1775170912.836597462] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170941.390424009] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170968.356420291] [drl_env]: 🎯 Goal reached!
+[INFO] [1775170995.005625194] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171021.812442824] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171048.491483509] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171079.775138240] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171106.801495488] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171132.061390514] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171159.187187491] [drl_env]: 🎯 Goal reached!
+[Ep  520/1000]  avg_reward= -191.52  critic_loss=19.0983  actor_loss=50.0413  steps=194899
+[INFO] [1775171186.721390690] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171216.428518540] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171246.651366446] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171273.857677013] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171301.893160039] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171329.839118934] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171357.307061560] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171382.792730334] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171409.034332496] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171433.878021520] [drl_env]: 🎯 Goal reached!
+[Ep  530/1000]  avg_reward= -187.40  critic_loss=11.1324  actor_loss=49.4488  steps=198047
+[INFO] [1775171460.217453012] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171486.059177101] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171513.216783842] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171539.767107825] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171566.194682184] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171592.542082801] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171620.756576411] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171645.287241411] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171671.631131269] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171697.442423338] [drl_env]: 🎯 Goal reached!
+[Ep  540/1000]  avg_reward= -171.47  critic_loss=23.2616  actor_loss=46.9289  steps=201074
+[INFO] [1775171725.847078085] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171751.425061175] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171778.375964138] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171804.514140816] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171831.024083256] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171858.451262419] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171884.101003688] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171908.910640206] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171933.345234267] [drl_env]: 🎯 Goal reached!
+[INFO] [1775171958.559817299] [drl_env]: 🎯 Goal reached!
+[Ep  550/1000]  avg_reward= -168.19  critic_loss=13.1685  actor_loss=48.0384  steps=204079
+TD3 model saved → model_td3_ep550.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775171983.681007097] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172008.376633413] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172032.684126450] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172058.597994553] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172085.625910845] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172110.350944162] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172135.157503999] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172159.248902906] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172183.804099803] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172208.950874035] [drl_env]: 🎯 Goal reached!
+[Ep  560/1000]  avg_reward= -161.10  critic_loss=13.5875  actor_loss=47.3579  steps=206944
+[INFO] [1775172233.750409945] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172257.981558333] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172283.607929409] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172308.599103805] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172333.269958805] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172357.826569055] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172381.383734777] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172406.939484304] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172432.637440277] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172457.541004869] [drl_env]: 🎯 Goal reached!
+[Ep  570/1000]  avg_reward= -164.90  critic_loss=21.6296  actor_loss=42.3460  steps=209784
+[INFO] [1775172482.336936744] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172505.993972608] [drl_env]: 🎯 Goal reached!
+[WARN] [1775172517.892430225] [drl_env]: 💥 Collision!
+[INFO] [1775172543.798464243] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172572.000569411] [drl_env]: 🎯 Goal reached!
+[WARN] [1775172585.590183552] [drl_env]: 💥 Collision!
+[INFO] [1775172610.624903749] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172634.485908606] [drl_env]: 🎯 Goal reached!
+[WARN] [1775172650.363624446] [drl_env]: 💥 Collision!
+[INFO] [1775172674.197641835] [drl_env]: 🎯 Goal reached!
+[Ep  580/1000]  avg_reward= -275.09  critic_loss=12.0837  actor_loss=44.6591  steps=212283
+[INFO] [1775172700.914410865] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172725.420900038] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172748.630983957] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172772.310696012] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172796.221206783] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172822.526829933] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172846.459268629] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172870.725305482] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172895.435104941] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172922.380930737] [drl_env]: 🎯 Goal reached!
+[Ep  590/1000]  avg_reward= -169.40  critic_loss=8.2313  actor_loss=42.0774  steps=215175
+[INFO] [1775172946.460967826] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172970.103327268] [drl_env]: 🎯 Goal reached!
+[INFO] [1775172995.263568511] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173019.051704275] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173042.861503999] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173067.813573828] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173092.059937872] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173115.734224763] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173140.916555075] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173165.966043632] [drl_env]: 🎯 Goal reached!
+[Ep  600/1000]  avg_reward= -157.98  critic_loss=7.4861  actor_loss=42.6494  steps=218017
+TD3 model saved → model_td3_ep600.pt
+TD3 model saved → model_td3.pt
+[WARN] [1775173177.331826030] [drl_env]: 💥 Collision!
+[INFO] [1775173202.038305344] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173226.498481471] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173250.070193827] [drl_env]: 🎯 Goal reached!
+[WARN] [1775173262.859234189] [drl_env]: 💥 Collision!
+[INFO] [1775173285.497667378] [drl_env]: 🎯 Goal reached!
+[WARN] [1775173299.780062632] [drl_env]: 💥 Collision!
+[INFO] [1775173325.838932978] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173350.409748812] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173374.633572253] [drl_env]: 🎯 Goal reached!
+[Ep  610/1000]  avg_reward= -254.21  critic_loss=19.2803  actor_loss=42.4299  steps=220429
+[INFO] [1775173400.531772022] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173426.058685303] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173451.259878533] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173475.298006859] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173498.983330521] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173523.581223777] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173548.819349475] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173575.805550221] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173599.774939258] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173626.628812720] [drl_env]: 🎯 Goal reached!
+[Ep  620/1000]  avg_reward= -185.93  critic_loss=8.4073  actor_loss=41.9544  steps=223363
+[INFO] [1775173651.127241118] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173675.207037795] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173699.562591972] [drl_env]: 🎯 Goal reached!
+[WARN] [1775173720.641343468] [drl_env]: 💥 Collision!
+[INFO] [1775173746.511721584] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173770.799938169] [drl_env]: 🎯 Goal reached!
+[WARN] [1775173782.762373203] [drl_env]: 💥 Collision!
+[INFO] [1775173809.728106842] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173834.221839883] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173857.866267329] [drl_env]: 🎯 Goal reached!
+[Ep  630/1000]  avg_reward= -253.29  critic_loss=7.1293  actor_loss=39.8730  steps=226049
+[INFO] [1775173881.992411375] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173905.792245833] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173929.408996687] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173953.466202419] [drl_env]: 🎯 Goal reached!
+[INFO] [1775173977.920332443] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174002.934988155] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174026.585434629] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174050.515897229] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174074.669762699] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174097.804361717] [drl_env]: 🎯 Goal reached!
+[Ep  640/1000]  avg_reward= -162.15  critic_loss=9.2114  actor_loss=38.4703  steps=228843
+[INFO] [1775174121.167148516] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174146.997711908] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174171.726627527] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174195.383526982] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174219.283428076] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174243.144741101] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174267.634081072] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174292.646149913] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174315.925422225] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174340.595362868] [drl_env]: 🎯 Goal reached!
+[Ep  650/1000]  avg_reward= -163.10  critic_loss=6.6304  actor_loss=39.5021  steps=231672
+TD3 model saved → model_td3_ep650.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775174363.955533100] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174388.291061845] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174411.330995699] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174435.280159904] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174459.985155983] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174483.586079434] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174506.516240030] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174530.557376522] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174553.762655072] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174577.645315538] [drl_env]: 🎯 Goal reached!
+[Ep  660/1000]  avg_reward= -162.42  critic_loss=8.4437  actor_loss=39.6878  steps=234427
+[INFO] [1775174600.776741529] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174623.650767812] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174646.780044484] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174670.818577969] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174693.754673718] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174717.740664095] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174740.173972035] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174763.528159795] [drl_env]: 🎯 Goal reached!
+[WARN] [1775174783.777654294] [drl_env]: 💥 Collision!
+[INFO] [1775174807.358363410] [drl_env]: 🎯 Goal reached!
+[Ep  670/1000]  avg_reward= -189.74  critic_loss=7.4216  actor_loss=37.6180  steps=237097
+[INFO] [1775174830.396507035] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174853.904598981] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174877.448389636] [drl_env]: 🎯 Goal reached!
+[WARN] [1775174899.197291794] [drl_env]: 💥 Collision!
+[INFO] [1775174924.897109323] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174948.476154862] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174971.483524495] [drl_env]: 🎯 Goal reached!
+[INFO] [1775174994.893652979] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175018.400345151] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175041.377511827] [drl_env]: 🎯 Goal reached!
+[Ep  680/1000]  avg_reward= -205.17  critic_loss=7.3218  actor_loss=39.6202  steps=239819
+[INFO] [1775175065.082848344] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175089.239264293] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175114.602468517] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175138.596149616] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175163.065844554] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175186.770757351] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175210.731621636] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175235.023571574] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175258.396831778] [drl_env]: 🎯 Goal reached!
+[WARN] [1775175269.274567656] [drl_env]: 💥 Collision!
+[Ep  690/1000]  avg_reward= -185.32  critic_loss=6.2900  actor_loss=39.9763  steps=242470
+[INFO] [1775175292.880703841] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175316.629309458] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175341.170376497] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175363.997868548] [drl_env]: 🎯 Goal reached!
+[WARN] [1775175375.343223238] [drl_env]: 💥 Collision!
+[INFO] [1775175399.183466558] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175422.287484571] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175445.737305688] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175469.224500381] [drl_env]: 🎯 Goal reached!
+[WARN] [1775175480.676571563] [drl_env]: 💥 Collision!
+[Ep  700/1000]  avg_reward= -210.78  critic_loss=6.3887  actor_loss=39.7419  steps=244919
+TD3 model saved → model_td3_ep700.pt
+TD3 model saved → model_td3.pt
+[WARN] [1775175491.934457992] [drl_env]: 💥 Collision!
+[INFO] [1775175514.425493321] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175537.011931138] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175560.596970594] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175583.692360067] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175606.756111544] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175630.063902875] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175652.723669950] [drl_env]: 🎯 Goal reached!
+[WARN] [1775175670.006642537] [drl_env]: 💥 Collision!
+[WARN] [1775175690.102834353] [drl_env]: 💥 Collision!
+[Ep  710/1000]  avg_reward= -265.77  critic_loss=18.8201  actor_loss=36.9880  steps=247347
+[INFO] [1775175712.681081551] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175735.828108165] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175759.164971269] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175782.700857719] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175805.196502833] [drl_env]: 🎯 Goal reached!
+[WARN] [1775175826.516902624] [drl_env]: 💥 Collision!
+[INFO] [1775175849.824430794] [drl_env]: 🎯 Goal reached!
+[WARN] [1775175860.975058772] [drl_env]: 💥 Collision!
+[INFO] [1775175884.652045349] [drl_env]: 🎯 Goal reached!
+[INFO] [1775175907.354366971] [drl_env]: 🎯 Goal reached!
+[Ep  720/1000]  avg_reward= -226.94  critic_loss=31.4993  actor_loss=36.5296  steps=249870
+[WARN] [1775175926.687799355] [drl_env]: 💥 Collision!
+[INFO] [1775175950.199617624] [drl_env]: 🎯 Goal reached!
+[WARN] [1775175971.803516903] [drl_env]: 💥 Collision!
+[INFO] [1775175994.631449956] [drl_env]: 🎯 Goal reached!
+[WARN] [1775176006.009625619] [drl_env]: 💥 Collision!
+[INFO] [1775176029.866778346] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176053.491923849] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176076.530414093] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176099.122040464] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176122.490107544] [drl_env]: 🎯 Goal reached!
+[Ep  730/1000]  avg_reward= -263.81  critic_loss=55.1692  actor_loss=35.9440  steps=252362
+[INFO] [1775176146.147567444] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176169.831979217] [drl_env]: 🎯 Goal reached!
+[WARN] [1775176190.758941712] [drl_env]: 💥 Collision!
+[INFO] [1775176214.342343918] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176237.608980884] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176261.370173122] [drl_env]: 🎯 Goal reached!
+[WARN] [1775176273.294005378] [drl_env]: 💥 Collision!
+[INFO] [1775176296.501095506] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176319.829645233] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176343.273764320] [drl_env]: 🎯 Goal reached!
+[Ep  740/1000]  avg_reward= -240.07  critic_loss=11.3869  actor_loss=36.1446  steps=254921
+[INFO] [1775176366.589842773] [drl_env]: 🎯 Goal reached!
+[WARN] [1775176388.311252837] [drl_env]: 💥 Collision!
+[INFO] [1775176411.472626254] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176434.842273146] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176457.897967014] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176481.086619460] [drl_env]: 🎯 Goal reached!
+[WARN] [1775176503.156991190] [drl_env]: 💥 Collision!
+[INFO] [1775176527.343025269] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176550.271891368] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176573.652409932] [drl_env]: 🎯 Goal reached!
+[Ep  750/1000]  avg_reward= -254.20  critic_loss=67.2268  actor_loss=32.9255  steps=257595
+TD3 model saved → model_td3_ep750.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775176596.632595946] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176619.436257885] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176642.816570532] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176665.605336286] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176688.469765103] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176712.322340326] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176735.699037781] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176759.548122648] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176782.245264250] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176805.357860743] [drl_env]: 🎯 Goal reached!
+[Ep  760/1000]  avg_reward= -157.65  critic_loss=20.0839  actor_loss=32.8311  steps=260292
+[INFO] [1775176828.790301856] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176850.876242757] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176874.035482761] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176898.321799821] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176920.939212837] [drl_env]: 🎯 Goal reached!
+[INFO] [1775176943.912822245] [drl_env]: 🎯 Goal reached!
+[WARN] [1775176964.433393616] [drl_env]: 💥 Collision!
+[WARN] [1775176984.879731573] [drl_env]: 💥 Collision!
+[INFO] [1775177007.853140115] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177029.802628508] [drl_env]: 🎯 Goal reached!
+[Ep  770/1000]  avg_reward= -238.12  critic_loss=38.8351  actor_loss=34.1980  steps=262899
+[INFO] [1775177053.199039255] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177076.407801850] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177098.527155314] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177121.419132758] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177143.636004247] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177166.017325699] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177188.023806180] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177210.550538225] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177233.483518454] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177256.957600920] [drl_env]: 🎯 Goal reached!
+[Ep  780/1000]  avg_reward= -167.43  critic_loss=53.7967  actor_loss=34.4027  steps=265537
+[INFO] [1775177279.896901021] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177302.813614531] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177327.015538822] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177349.569168763] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177373.971777731] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177396.913619254] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177419.667710272] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177443.213886745] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177466.996089831] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177489.371543696] [drl_env]: 🎯 Goal reached!
+[Ep  790/1000]  avg_reward= -158.53  critic_loss=57.3493  actor_loss=31.9944  steps=268239
+[WARN] [1775177500.392159996] [drl_env]: 💥 Collision!
+[INFO] [1775177524.003177751] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177547.783580487] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177571.229076850] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177594.637457730] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177618.868001828] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177641.807118150] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177665.430129769] [drl_env]: 🎯 Goal reached!
+[WARN] [1775177670.891905978] [drl_env]: 💥 Collision!
+[INFO] [1775177694.684421301] [drl_env]: 🎯 Goal reached!
+[Ep  800/1000]  avg_reward= -223.76  critic_loss=48.9290  actor_loss=33.1931  steps=270625
+TD3 model saved → model_td3_ep800.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775177717.649158955] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177741.492521128] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177764.663346554] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177787.218791793] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177809.572384755] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177832.265680400] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177855.245373637] [drl_env]: 🎯 Goal reached!
+[WARN] [1775177860.321818882] [drl_env]: 💥 Collision!
+[INFO] [1775177883.018783285] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177905.244073673] [drl_env]: 🎯 Goal reached!
+[Ep  810/1000]  avg_reward= -185.32  critic_loss=22.4544  actor_loss=31.8478  steps=273062
+[INFO] [1775177928.300972208] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177951.162129903] [drl_env]: 🎯 Goal reached!
+[INFO] [1775177974.466042441] [drl_env]: 🎯 Goal reached!
+[WARN] [1775177979.699561627] [drl_env]: 💥 Collision!
+[INFO] [1775178003.985363320] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178026.652082304] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178049.815661824] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178072.882209086] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178095.242945243] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178119.030469126] [drl_env]: 🎯 Goal reached!
+[Ep  820/1000]  avg_reward= -186.93  critic_loss=38.6413  actor_loss=30.5119  steps=275544
+[INFO] [1775178141.618418803] [drl_env]: 🎯 Goal reached!
+[WARN] [1775178161.883694084] [drl_env]: 💥 Collision!
+[INFO] [1775178185.161068886] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178208.226532347] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178231.638986638] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178254.508988140] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178277.919394560] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178300.264864732] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178323.323265734] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178346.500033600] [drl_env]: 🎯 Goal reached!
+[Ep  830/1000]  avg_reward= -204.61  critic_loss=10.2282  actor_loss=32.7262  steps=278191
+[INFO] [1775178369.943395312] [drl_env]: 🎯 Goal reached!
+[WARN] [1775178380.584806692] [drl_env]: 💥 Collision!
+[INFO] [1775178403.613283007] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178425.839562830] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178448.907020003] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178472.228824733] [drl_env]: 🎯 Goal reached!
+[WARN] [1775178477.613477930] [drl_env]: 💥 Collision!
+[INFO] [1775178500.605270422] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178523.637621758] [drl_env]: 🎯 Goal reached!
+[WARN] [1775178529.086166876] [drl_env]: 💥 Collision!
+[Ep  840/1000]  avg_reward= -215.08  critic_loss=15.5738  actor_loss=31.7539  steps=280295
+[INFO] [1775178551.953010382] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178575.109575382] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178598.036283244] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178620.908494620] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178644.308630215] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178668.096550257] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178691.715284469] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178715.216072242] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178738.492944715] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178761.946322042] [drl_env]: 🎯 Goal reached!
+[Ep  850/1000]  avg_reward= -149.47  critic_loss=43.6994  actor_loss=28.4307  steps=282998
+TD3 model saved → model_td3_ep850.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775178785.017291608] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178808.709621323] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178831.911989467] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178856.185489515] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178879.506051667] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178902.749165614] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178926.626083430] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178950.105271382] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178973.454180740] [drl_env]: 🎯 Goal reached!
+[INFO] [1775178996.663230913] [drl_env]: 🎯 Goal reached!
+[Ep  860/1000]  avg_reward= -151.92  critic_loss=24.3665  actor_loss=31.9229  steps=285730
+[INFO] [1775179020.295011618] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179044.125429761] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179068.506602718] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179092.939059453] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179117.174120995] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179141.864624016] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179164.970789389] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179189.090753370] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179213.019297749] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179236.622070480] [drl_env]: 🎯 Goal reached!
+[Ep  870/1000]  avg_reward= -159.39  critic_loss=45.4464  actor_loss=30.8290  steps=288519
+[INFO] [1775179260.295809594] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179283.874576742] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179308.611129697] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179333.153680702] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179357.349076866] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179381.306641304] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179405.144759817] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179429.369640461] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179452.789886071] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179477.767531921] [drl_env]: 🎯 Goal reached!
+[Ep  880/1000]  avg_reward= -167.19  critic_loss=11.0701  actor_loss=30.5154  steps=291320
+[INFO] [1775179502.475233902] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179526.094724448] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179551.446173813] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179575.667418095] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179599.792339896] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179624.355874525] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179647.963390673] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179672.193713383] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179696.842206867] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179720.800222702] [drl_env]: 🎯 Goal reached!
+[Ep  890/1000]  avg_reward= -146.24  critic_loss=23.3717  actor_loss=27.1936  steps=294093
+[INFO] [1775179745.472150148] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179770.514730262] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179795.453721280] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179819.038430747] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179841.868096665] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179865.936988055] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179889.779292239] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179914.117637579] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179938.864052416] [drl_env]: 🎯 Goal reached!
+[INFO] [1775179962.843069856] [drl_env]: 🎯 Goal reached!
+[Ep  900/1000]  avg_reward= -155.24  critic_loss=34.8810  actor_loss=28.9526  steps=296860
+TD3 model saved → model_td3_ep900.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775179985.980482509] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180009.736505226] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180033.280495044] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180057.000173865] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180080.520190207] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180103.456349982] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180127.682188348] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180152.362936135] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180175.736365356] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180199.838428151] [drl_env]: 🎯 Goal reached!
+[Ep  910/1000]  avg_reward= -139.53  critic_loss=51.1823  actor_loss=28.8761  steps=299566
+[INFO] [1775180222.833365059] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180245.363245181] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180269.225520465] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180292.219665137] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180316.078163719] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180339.395727499] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180363.938202544] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180387.503976195] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180410.782492448] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180434.372455037] [drl_env]: 🎯 Goal reached!
+[Ep  920/1000]  avg_reward= -140.53  critic_loss=10.7909  actor_loss=29.7049  steps=302253
+[INFO] [1775180458.199188845] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180481.789228222] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180505.806125014] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180529.695906896] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180554.785791088] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180578.718897786] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180602.916959750] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180626.563802509] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180650.778662261] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180673.916354409] [drl_env]: 🎯 Goal reached!
+[Ep  930/1000]  avg_reward= -139.81  critic_loss=9.6994  actor_loss=27.0683  steps=305000
+[INFO] [1775180697.572750532] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180723.019231127] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180746.635288492] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180771.198720699] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180795.187998711] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180818.512010314] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180844.719090503] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180868.538823986] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180891.753681810] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180914.583596217] [drl_env]: 🎯 Goal reached!
+[Ep  940/1000]  avg_reward= -135.38  critic_loss=23.4918  actor_loss=28.1574  steps=307754
+[INFO] [1775180938.851414346] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180963.081573705] [drl_env]: 🎯 Goal reached!
+[INFO] [1775180986.737617208] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181011.341263080] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181034.972752647] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181059.601460247] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181084.061525374] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181108.852564206] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181133.665184503] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181157.110435864] [drl_env]: 🎯 Goal reached!
+[Ep  950/1000]  avg_reward= -167.27  critic_loss=48.6104  actor_loss=26.5569  steps=310531
+TD3 model saved → model_td3_ep950.pt
+TD3 model saved → model_td3.pt
+[INFO] [1775181181.926336835] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181206.290155978] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181230.048225001] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181254.092286862] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181278.057504717] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181302.215318484] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181325.802433845] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181349.688004935] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181373.736905660] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181397.050607820] [drl_env]: 🎯 Goal reached!
+[Ep  960/1000]  avg_reward= -133.10  critic_loss=27.6899  actor_loss=29.6901  steps=313272
+[INFO] [1775181421.123122494] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181445.625434263] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181469.986653178] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181493.504033851] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181518.140079823] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181542.238218908] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181565.591515894] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181590.309853031] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181614.367376361] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181637.856892303] [drl_env]: 🎯 Goal reached!
+[Ep  970/1000]  avg_reward= -141.97  critic_loss=65.2270  actor_loss=26.6548  steps=316022
+[INFO] [1775181662.095046077] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181685.096492637] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181708.039790443] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181732.516899712] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181755.512460308] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181779.367489390] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181805.097116065] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181828.629576133] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181852.913160906] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181876.601825245] [drl_env]: 🎯 Goal reached!
+[Ep  980/1000]  avg_reward= -174.04  critic_loss=52.6723  actor_loss=24.9797  steps=318746
+[INFO] [1775181900.321094630] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181924.426462474] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181948.324358739] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181972.449112887] [drl_env]: 🎯 Goal reached!
+[INFO] [1775181996.624160771] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182020.554813703] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182043.794636137] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182068.139195839] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182092.207176635] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182116.157025592] [drl_env]: 🎯 Goal reached!
+[Ep  990/1000]  avg_reward= -129.94  critic_loss=17.7850  actor_loss=26.7801  steps=321481
+[INFO] [1775182140.581120922] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182163.807614669] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182187.686876196] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182211.439216414] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182235.017501547] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182259.032569648] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182282.292070563] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182305.319640034] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182328.487622642] [drl_env]: 🎯 Goal reached!
+[INFO] [1775182352.939466709] [drl_env]: 🎯 Goal reached!
+[Ep 1000/1000]  avg_reward= -132.50  critic_loss=52.5034  actor_loss=25.4474  steps=324186
+TD3 model saved → model_td3_ep1000.pt
+TD3 model saved → model_td3.pt
+TD3 model saved → model_td3_interrupted.pt
+TD3 model saved on shutdown.

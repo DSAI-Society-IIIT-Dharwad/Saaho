@@ -1,0 +1,16 @@
+============================================
+ Diverse TD3 Training
+============================================
+ Layouts: 4
+ Episodes per layout: 250
+ Total: 1000 episodes
+ Strategy: Random goals each episode
+============================================
+
+
+>>> Layout 1/4: turtlebot3_layout0.world <<<
+
+Starting Gazebo...
+Spawning robot...
+Training 250 episodes with random goals...
+[INFO] [1775210673.814763089] [drl_env]: Env node ready ✅

@@ -1,0 +1,230 @@
+[INFO] [1775136444.222800890] [drl_env]: Env node ready ✅
+TD3Agent on device: cpu
+State dim: 26  |  Action dim: 2
+Linear vel: [0.0, 0.22]  Angular vel: [-2.0, 2.0]
+
+=======================================================
+ TurtleBot3 TD3 Training  |  1000 episodes
+=======================================================
+
+[WARN] [1775136455.442977100] [drl_env]: 💥 Collision!
+[WARN] [1775136464.817596639] [drl_env]: 💥 Collision!
+[WARN] [1775136474.661495388] [drl_env]: 💥 Collision!
+[WARN] [1775136493.481599627] [drl_env]: 💥 Collision!
+[WARN] [1775136506.737751761] [drl_env]: 💥 Collision!
+[WARN] [1775136521.610056400] [drl_env]: 💥 Collision!
+[WARN] [1775136531.107912783] [drl_env]: 💥 Collision!
+[WARN] [1775136547.867340784] [drl_env]: 💥 Collision!
+[WARN] [1775136577.706101802] [drl_env]: 💥 Collision!
+[WARN] [1775136602.482893506] [drl_env]: 💥 Collision!
+[Ep   10/1000]  avg_reward= -488.67  critic_loss=462.2134  actor_loss=3.2662  steps=1406
+[WARN] [1775136613.280684521] [drl_env]: 💥 Collision!
+[WARN] [1775136626.135601434] [drl_env]: 💥 Collision!
+[WARN] [1775136637.249911149] [drl_env]: 💥 Collision!
+[WARN] [1775136659.664551685] [drl_env]: 💥 Collision!
+[WARN] [1775136671.620365742] [drl_env]: 💥 Collision!
+[WARN] [1775136689.116665151] [drl_env]: 💥 Collision!
+[WARN] [1775136700.599817873] [drl_env]: 💥 Collision!
+[WARN] [1775136710.107577184] [drl_env]: 💥 Collision!
+[WARN] [1775136718.597963455] [drl_env]: 💥 Collision!
+[WARN] [1775136728.590480761] [drl_env]: 💥 Collision!
+[Ep   20/1000]  avg_reward= -377.97  critic_loss=734.9243  actor_loss=7.6259  steps=2260
+[WARN] [1775136770.348540796] [drl_env]: 💥 Collision!
+[WARN] [1775136783.510848634] [drl_env]: 💥 Collision!
+[WARN] [1775136805.467744267] [drl_env]: 💥 Collision!
+[WARN] [1775136817.090787513] [drl_env]: 💥 Collision!
+[WARN] [1775136854.126028626] [drl_env]: 💥 Collision!
+[WARN] [1775136875.052565084] [drl_env]: 💥 Collision!
+[WARN] [1775136888.265144324] [drl_env]: 💥 Collision!
+[WARN] [1775136897.128880893] [drl_env]: 💥 Collision!
+[WARN] [1775136907.872092557] [drl_env]: 💥 Collision!
+[WARN] [1775136930.600754258] [drl_env]: 💥 Collision!
+[Ep   30/1000]  avg_reward= -579.47  critic_loss=479.5293  actor_loss=16.7974  steps=3979
+[WARN] [1775136939.368729175] [drl_env]: 💥 Collision!
+[WARN] [1775136949.222494930] [drl_env]: 💥 Collision!
+[WARN] [1775136968.284121417] [drl_env]: 💥 Collision!
+[WARN] [1775136979.224115693] [drl_env]: 💥 Collision!
+[WARN] [1775136988.108768685] [drl_env]: 💥 Collision!
+[WARN] [1775136999.951938718] [drl_env]: 💥 Collision!
+[WARN] [1775137010.247668017] [drl_env]: 💥 Collision!
+[WARN] [1775137021.410593845] [drl_env]: 💥 Collision!
+[WARN] [1775137033.506238364] [drl_env]: 💥 Collision!
+[WARN] [1775137045.936482734] [drl_env]: 💥 Collision!
+[Ep   40/1000]  avg_reward= -405.36  critic_loss=540.9350  actor_loss=22.7317  steps=4975
+[WARN] [1775137057.950006247] [drl_env]: 💥 Collision!
+[WARN] [1775137103.566749863] [drl_env]: 💥 Collision!
+[WARN] [1775137114.243576544] [drl_env]: 💥 Collision!
+[WARN] [1775137134.132097746] [drl_env]: 💥 Collision!
+[WARN] [1775137156.517048618] [drl_env]: 💥 Collision!
+[WARN] [1775137175.675829502] [drl_env]: 💥 Collision!
+[WARN] [1775137186.447623885] [drl_env]: 💥 Collision!
+[WARN] [1775137204.034498662] [drl_env]: 💥 Collision!
+[WARN] [1775137221.524944568] [drl_env]: 💥 Collision!
+[WARN] [1775137235.079261779] [drl_env]: 💥 Collision!
+[Ep   50/1000]  avg_reward= -586.97  critic_loss=283.4778  actor_loss=32.6888  steps=6625
+TD3 model saved → model_td3_ep50.pt
+TD3 model saved → model_td3.pt
+[WARN] [1775137253.181914940] [drl_env]: 💥 Collision!
+[WARN] [1775137269.057796112] [drl_env]: 💥 Collision!
+[WARN] [1775137285.308872913] [drl_env]: 💥 Collision!
+[WARN] [1775137299.695656554] [drl_env]: 💥 Collision!
+[WARN] [1775137325.237463637] [drl_env]: 💥 Collision!
+[WARN] [1775137337.512599563] [drl_env]: 💥 Collision!
+[WARN] [1775137353.832238264] [drl_env]: 💥 Collision!
+[WARN] [1775137369.196481849] [drl_env]: 💥 Collision!
+[WARN] [1775137381.054639272] [drl_env]: 💥 Collision!
+[WARN] [1775137397.070180665] [drl_env]: 💥 Collision!
+[Ep   60/1000]  avg_reward= -516.33  critic_loss=307.5196  actor_loss=41.0718  steps=8039
+[WARN] [1775137405.541534111] [drl_env]: 💥 Collision!
+[WARN] [1775137418.643414938] [drl_env]: 💥 Collision!
+[WARN] [1775137432.310723324] [drl_env]: 💥 Collision!
+[WARN] [1775137447.064116935] [drl_env]: 💥 Collision!
+[WARN] [1775137462.167491664] [drl_env]: 💥 Collision!
+[WARN] [1775137475.138128214] [drl_env]: 💥 Collision!
+[WARN] [1775137487.310603557] [drl_env]: 💥 Collision!
+[WARN] [1775137503.876069159] [drl_env]: 💥 Collision!
+[WARN] [1775137519.318668968] [drl_env]: 💥 Collision!
+[WARN] [1775137533.973655945] [drl_env]: 💥 Collision!
+[Ep   70/1000]  avg_reward= -451.33  critic_loss=229.1288  actor_loss=48.1022  steps=9210
+[WARN] [1775137546.283476520] [drl_env]: 💥 Collision!
+[WARN] [1775137563.341403736] [drl_env]: 💥 Collision!
+[WARN] [1775137584.009365950] [drl_env]: 💥 Collision!
+[WARN] [1775137601.131286562] [drl_env]: 💥 Collision!
+[WARN] [1775137616.925457806] [drl_env]: 💥 Collision!
+[WARN] [1775137668.358538052] [drl_env]: 💥 Collision!
+[WARN] [1775137741.205581591] [drl_env]: 💥 Collision!
+[WARN] [1775137759.043456537] [drl_env]: 💥 Collision!
+[WARN] [1775137775.325829985] [drl_env]: 💥 Collision!
+[Ep   80/1000]  avg_reward= -676.72  critic_loss=206.7824  actor_loss=61.0603  steps=11283
+[WARN] [1775137823.242343509] [drl_env]: 💥 Collision!
+[WARN] [1775137888.712718025] [drl_env]: 💥 Collision!
+[WARN] [1775137900.679615372] [drl_env]: 💥 Collision!
+[WARN] [1775137975.564253923] [drl_env]: 💥 Collision!
+[WARN] [1775137987.467867980] [drl_env]: 💥 Collision!
+[WARN] [1775138062.637146240] [drl_env]: 💥 Collision!
+[WARN] [1775138102.686580739] [drl_env]: 💥 Collision!
+[Ep   90/1000]  avg_reward= -817.20  critic_loss=99.2843  actor_loss=77.0128  steps=14180
+[WARN] [1775138114.791941799] [drl_env]: 💥 Collision!
+[WARN] [1775138160.042964824] [drl_env]: 💥 Collision!
+[WARN] [1775138262.490046298] [drl_env]: 💥 Collision!
+[WARN] [1775138280.517318653] [drl_env]: 💥 Collision!
+[WARN] [1775138414.133788134] [drl_env]: 💥 Collision!
+[Ep  100/1000]  avg_reward= -832.65  critic_loss=62.7167  actor_loss=94.2627  steps=17948
+TD3 model saved → model_td3_ep100.pt
+TD3 model saved → model_td3.pt
+[WARN] [1775138553.580184043] [drl_env]: 💥 Collision!
+[WARN] [1775138752.496227831] [drl_env]: 💥 Collision!
+[WARN] [1775138797.766842727] [drl_env]: 💥 Collision!
+[WARN] [1775138817.019654213] [drl_env]: 💥 Collision!
+[WARN] [1775138945.967427263] [drl_env]: 💥 Collision!
+[Ep  110/1000]  avg_reward= -759.09  critic_loss=52.6024  actor_loss=109.1313  steps=21501
+[WARN] [1775138965.435516356] [drl_env]: 💥 Collision!
+[WARN] [1775139012.064472849] [drl_env]: 💥 Collision!
+[WARN] [1775139085.737301039] [drl_env]: 💥 Collision!
+[WARN] [1775139167.452316071] [drl_env]: 💥 Collision!
+[WARN] [1775139301.692903667] [drl_env]: 💥 Collision!
+[Ep  120/1000]  avg_reward= -812.55  critic_loss=46.5621  actor_loss=119.4177  steps=25131
+[WARN] [1775139561.691900854] [drl_env]: 💥 Collision!
+[WARN] [1775139703.817034920] [drl_env]: 💥 Collision!
+[WARN] [1775139723.050949449] [drl_env]: 💥 Collision!
+[WARN] [1775139749.380402843] [drl_env]: 💥 Collision!
+[WARN] [1775139781.570827270] [drl_env]: 💥 Collision!
+[Ep  130/1000]  avg_reward= -841.40  critic_loss=51.1864  actor_loss=129.7162  steps=28939
+[WARN] [1775139808.158578749] [drl_env]: 💥 Collision!
+[WARN] [1775139836.096548157] [drl_env]: 💥 Collision!
+[WARN] [1775139864.942677252] [drl_env]: 💥 Collision!
+[WARN] [1775139945.301929943] [drl_env]: 💥 Collision!
+[WARN] [1775140027.095934693] [drl_env]: 💥 Collision!
+[WARN] [1775140048.635782634] [drl_env]: 💥 Collision!
+[WARN] [1775140122.735895234] [drl_env]: 💥 Collision!
+[Ep  140/1000]  avg_reward= -735.65  critic_loss=47.5601  actor_loss=135.9575  steps=31959
+[WARN] [1775140142.228480506] [drl_env]: 💥 Collision!
+[WARN] [1775140179.529492696] [drl_env]: 💥 Collision!
+[WARN] [1775140209.667274848] [drl_env]: 💥 Collision!
+[WARN] [1775140297.415771110] [drl_env]: 💥 Collision!
+[WARN] [1775140332.129626230] [drl_env]: 💥 Collision!
+[WARN] [1775140356.069756885] [drl_env]: 💥 Collision!
+[WARN] [1775140398.392855858] [drl_env]: 💥 Collision!
+[WARN] [1775140422.443703060] [drl_env]: 💥 Collision!
+[WARN] [1775140477.319181167] [drl_env]: 💥 Collision!
+[Ep  150/1000]  avg_reward= -766.14  critic_loss=45.2450  actor_loss=141.0134  steps=34978
+TD3 model saved → model_td3_ep150.pt
+TD3 model saved → model_td3.pt
+[WARN] [1775140496.800300876] [drl_env]: 💥 Collision!
+[WARN] [1775140590.060683198] [drl_env]: 💥 Collision!
+[INFO] [1775140646.528075232] [drl_env]: 🎯 Goal reached!
+[WARN] [1775140694.459298678] [drl_env]: 💥 Collision!
+[WARN] [1775140805.960000210] [drl_env]: 💥 Collision!
+[WARN] [1775140947.505315282] [drl_env]: 💥 Collision!
+[Ep  160/1000]  avg_reward= -831.65  critic_loss=41.5452  actor_loss=149.1091  steps=39163
+[WARN] [1775140996.720072158] [drl_env]: 💥 Collision!
+[WARN] [1775141026.723941743] [drl_env]: 💥 Collision!
+[WARN] [1775141049.069877621] [drl_env]: 💥 Collision!
+[WARN] [1775141078.059582876] [drl_env]: 💥 Collision!
+[WARN] [1775141165.975944333] [drl_env]: 💥 Collision!
+[WARN] [1775141206.141589004] [drl_env]: 💥 Collision!
+[WARN] [1775141232.707545542] [drl_env]: 💥 Collision!
+[WARN] [1775141287.797272463] [drl_env]: 💥 Collision!
+[WARN] [1775141334.564416956] [drl_env]: 💥 Collision!
+[Ep  170/1000]  avg_reward= -818.78  critic_loss=41.8535  actor_loss=154.2565  steps=42610
+[WARN] [1775141364.297358474] [drl_env]: 💥 Collision!
+[WARN] [1775141385.728321184] [drl_env]: 💥 Collision!
+[WARN] [1775141430.293105083] [drl_env]: 💥 Collision!
+[WARN] [1775141483.406909084] [drl_env]: 💥 Collision!
+[WARN] [1775141561.112082318] [drl_env]: 💥 Collision!
+[WARN] [1775141639.885560118] [drl_env]: 💥 Collision!
+[WARN] [1775141664.154600650] [drl_env]: 💥 Collision!
+[WARN] [1775141694.818839601] [drl_env]: 💥 Collision!
+[Ep  180/1000]  avg_reward= -773.51  critic_loss=55.5414  actor_loss=158.8953  steps=45857
+[WARN] [1775141735.995790892] [drl_env]: 💥 Collision!
+[WARN] [1775141889.692992634] [drl_env]: 💥 Collision!
+[Ep  190/1000]  avg_reward= -879.72  critic_loss=43.0742  actor_loss=164.3108  steps=50636
+[Ep  200/1000]  avg_reward= -901.75  critic_loss=60.7376  actor_loss=168.9686  steps=55636
+TD3 model saved → model_td3_ep200.pt
+TD3 model saved → model_td3.pt
+[Ep  210/1000]  avg_reward= -889.73  critic_loss=49.5799  actor_loss=172.6741  steps=60636
+[Ep  220/1000]  avg_reward= -874.95  critic_loss=76.5172  actor_loss=174.9100  steps=65636
+[WARN] [1775144487.952408249] [drl_env]: 💥 Collision!
+[Ep  230/1000]  avg_reward= -860.40  critic_loss=71.3101  actor_loss=175.9081  steps=70618
+[Ep  240/1000]  avg_reward= -852.86  critic_loss=74.7711  actor_loss=176.5949  steps=75618
+[Ep  250/1000]  avg_reward= -858.03  critic_loss=77.7389  actor_loss=177.3081  steps=80618
+TD3 model saved → model_td3_ep250.pt
+TD3 model saved → model_td3.pt
+[WARN] [1775145719.417348392] [drl_env]: 💥 Collision!
+[WARN] [1775146079.174211441] [drl_env]: 💥 Collision!
+[Ep  260/1000]  avg_reward= -889.49  critic_loss=67.4354  actor_loss=177.8754  steps=85503
+[WARN] [1775146538.193519884] [drl_env]: 💥 Collision!
+[WARN] [1775146678.784898850] [drl_env]: 💥 Collision!
+[WARN] [1775146800.890581547] [drl_env]: 💥 Collision!
+[WARN] [1775146882.336478324] [drl_env]: 💥 Collision!
+[WARN] [1775147111.113040254] [drl_env]: 💥 Collision!
+[Ep  270/1000]  avg_reward= -841.62  critic_loss=69.5444  actor_loss=178.0086  steps=89751
+[WARN] [1775147722.848873095] [drl_env]: 💥 Collision!
+[WARN] [1775148006.836302711] [drl_env]: 💥 Collision!
+[WARN] [1775148165.645716343] [drl_env]: 💥 Collision!
+[WARN] [1775148180.187971380] [drl_env]: 💥 Collision!
+[WARN] [1775148278.829999916] [drl_env]: 💥 Collision!
+[WARN] [1775148319.096839411] [drl_env]: 💥 Collision!
+[Ep  280/1000]  avg_reward= -532.59  critic_loss=230.6009  actor_loss=178.2324  steps=92084
+[WARN] [1775148590.394504483] [drl_env]: 💥 Collision!
+[WARN] [1775148716.916347794] [drl_env]: 💥 Collision!
+[INFO] [1775149142.430683331] [drl_env]: Env node ready ✅
+TD3Agent on device: cpu
+State dim: 26  |  Action dim: 2
+Linear vel: [0.0, 0.22]  Angular vel: [-2.0, 2.0]
+TD3 model loaded ← model_td3.pt
+Resuming from saved TD3 model 🔄
+
+=======================================================
+ TurtleBot3 TD3 Training  |  1000 episodes
+=======================================================
+
+[WARN] [1775149159.635670700] [drl_env]: 💥 Collision!
+[WARN] [1775149167.397183893] [drl_env]: 💥 Collision!
+[WARN] [1775149178.412097831] [drl_env]: 💥 Collision!
+[WARN] [1775149187.091600795] [drl_env]: 💥 Collision!
+[WARN] [1775149208.876304936] [drl_env]: 💥 Collision!
+[WARN] [1775149217.311038038] [drl_env]: 💥 Collision!
+[WARN] [1775149226.314515301] [drl_env]: 💥 Collision!
+[Ep   10/1000]  avg_reward= -601.37  critic_loss=56.4697  actor_loss=176.0657  steps=2471
+[WARN] [1775149502.516514392] [drl_env]: 💥 Collision!
