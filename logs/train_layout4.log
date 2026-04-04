@@ -1,0 +1,191 @@
+[INFO] [1775244164.948151945] [drl_env]: Env node ready ✅
+/root/drone_rl/agent_td3.py:234: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(path, map_location=self.device)
+[INFO] [1775244843.916199324] [drl_env]: 🎯 Goal reached!
+[INFO] [1775245066.975615772] [drl_env]: 🎯 Goal reached!
+[INFO] [1775245158.857378319] [drl_env]: 🎯 Goal reached!
+🎯 Using random goals (first: -1.60, 2.48)
+[INFO] [1775245301.441384176] [drl_env]: Env node ready ✅
+TD3Agent on device: cuda
+State dim: 26  |  Action dim: 2
+Linear vel: [0.0, 0.22]  Angular vel: [-2.0, 2.0]
+/root/drone_rl/agent_td3.py:234: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(path, map_location=self.device)
+TD3 model loaded ← model_td3_diverse.pt
+Resuming from saved model_td3_diverse.pt 🔄
+
+=======================================================
+ TurtleBot3 TD3 Training  |  250 episodes
+=======================================================
+
+[INFO] [1775245629.896881826] [drl_env]: 🎯 Goal reached!
+[Ep   10/250]  goal=(+1.04,-1.99)  reward= -643.96  c_loss=50.1050  a_loss=103.4891  steps=5000
+[INFO] [1775246131.496426647] [drl_env]: 🎯 Goal reached!
+[Ep   20/250]  goal=(-1.98,+1.22)  reward= -688.30  c_loss=41.5748  a_loss=113.5650  steps=9677
+[INFO] [1775246204.504470380] [drl_env]: 🎯 Goal reached!
+[INFO] [1775246335.092162675] [drl_env]: 🎯 Goal reached!
+[INFO] [1775246504.249774386] [drl_env]: 🎯 Goal reached!
+[Ep   30/250]  goal=(-1.18,+0.75)  reward= -400.28  c_loss=75.5077  a_loss=108.6118  steps=13995
+[INFO] [1775246913.383398951] [drl_env]: 🎯 Goal reached!
+[Ep   40/250]  goal=(-2.33,+0.49)  reward= -703.37  c_loss=69.6088  a_loss=113.6166  steps=18734
+[INFO] [1775247117.761774789] [drl_env]: 🎯 Goal reached!
+[INFO] [1775247228.311064883] [drl_env]: 🎯 Goal reached!
+[INFO] [1775247294.069157211] [drl_env]: 🎯 Goal reached!
+[Ep   50/250]  goal=(-1.95,+1.37)  reward= -506.46  c_loss=74.6017  a_loss=110.2230  steps=23379
+TD3 model saved → model_td3_diverse_ep50.pt
+TD3 model saved → model_td3_diverse.pt
+[INFO] [1775247325.926169071] [drl_env]: 🎯 Goal reached!
+[INFO] [1775247338.057687579] [drl_env]: 🎯 Goal reached!
+[INFO] [1775247425.341003918] [drl_env]: 🎯 Goal reached!
+[INFO] [1775247631.030854414] [drl_env]: 🎯 Goal reached!
+[Ep   60/250]  goal=(+1.37,+1.73)  reward= -494.84  c_loss=76.5667  a_loss=111.1524  steps=27527
+[Ep   70/250]  goal=(-2.50,+2.02)  reward= -595.68  c_loss=80.4442  a_loss=110.6928  steps=32527
+[INFO] [1775248126.789141445] [drl_env]: 🎯 Goal reached!
+[INFO] [1775248417.325981639] [drl_env]: 🎯 Goal reached!
+[INFO] [1775248420.017357393] [drl_env]: 🎯 Goal reached!
+[INFO] [1775248458.813448571] [drl_env]: 🎯 Goal reached!
+[Ep   80/250]  goal=(-1.00,+1.45)  reward= -304.81  c_loss=107.0724  a_loss=107.4538  steps=36629
+[INFO] [1775248469.638809769] [drl_env]: 🎯 Goal reached!
+[Ep   90/250]  goal=(+1.12,+1.91)  reward= -581.93  c_loss=69.9683  a_loss=108.4777  steps=41249
+[INFO] [1775248919.612383951] [drl_env]: 🎯 Goal reached!
+[INFO] [1775248987.529172148] [drl_env]: 🎯 Goal reached!
+[INFO] [1775249011.137149179] [drl_env]: 🎯 Goal reached!
+[INFO] [1775249099.723481600] [drl_env]: 🎯 Goal reached!
+[INFO] [1775249160.535057602] [drl_env]: 🎯 Goal reached!
+[INFO] [1775249174.746151725] [drl_env]: 🎯 Goal reached!
+[Ep  100/250]  goal=(+0.10,+2.35)  reward= -575.59  c_loss=70.6920  a_loss=110.3244  steps=45251
+TD3 model saved → model_td3_diverse_ep100.pt
+TD3 model saved → model_td3_diverse.pt
+[INFO] [1775249382.770242188] [drl_env]: 🎯 Goal reached!
+[INFO] [1775249395.622720835] [drl_env]: 🎯 Goal reached!
+[Ep  110/250]  goal=(+0.34,+1.74)  reward= -603.96  c_loss=90.7324  a_loss=111.7466  steps=49817
+[INFO] [1775249757.333314817] [drl_env]: 🎯 Goal reached!
+[INFO] [1775249794.280043691] [drl_env]: 🎯 Goal reached!
+[INFO] [1775249889.638043150] [drl_env]: 🎯 Goal reached!
+[Ep  120/250]  goal=(-1.56,+0.64)  reward= -494.73  c_loss=81.1318  a_loss=112.4333  steps=54179
+[INFO] [1775250187.696899990] [drl_env]: 🎯 Goal reached!
+[INFO] [1775250285.567752586] [drl_env]: 🎯 Goal reached!
+[INFO] [1775250295.075757005] [drl_env]: 🎯 Goal reached!
+[INFO] [1775250306.659590599] [drl_env]: 🎯 Goal reached!
+[INFO] [1775250337.519440323] [drl_env]: 🎯 Goal reached!
+[Ep  130/250]  goal=(-1.63,-0.07)  reward= -516.92  c_loss=80.6990  a_loss=109.9569  steps=59179
+[INFO] [1775250657.165230893] [drl_env]: 🎯 Goal reached!
+[Ep  140/250]  goal=(+1.41,+1.81)  reward= -536.66  c_loss=96.8469  a_loss=108.2146  steps=64058
+[INFO] [1775250887.921756837] [drl_env]: 🎯 Goal reached!
+[INFO] [1775250979.186069561] [drl_env]: 🎯 Goal reached!
+[INFO] [1775250988.287254249] [drl_env]: 🎯 Goal reached!
+[INFO] [1775251123.466488079] [drl_env]: 🎯 Goal reached!
+[Ep  150/250]  goal=(+1.16,-0.15)  reward= -429.02  c_loss=100.6037  a_loss=108.4333  steps=67929
+TD3 model saved → model_td3_diverse_ep150.pt
+TD3 model saved → model_td3_diverse.pt
+[INFO] [1775251244.799109731] [drl_env]: 🎯 Goal reached!
+[INFO] [1775251452.778405639] [drl_env]: 🎯 Goal reached!
+[Ep  160/250]  goal=(+1.92,-2.43)  reward= -589.95  c_loss=92.3750  a_loss=108.9866  steps=72732
+[INFO] [1775251631.239154709] [drl_env]: 🎯 Goal reached!
+[INFO] [1775251807.690050714] [drl_env]: 🎯 Goal reached!
+[Ep  170/250]  goal=(+1.08,+0.27)  reward= -411.60  c_loss=76.6002  a_loss=108.5462  steps=76803
+[INFO] [1775251948.096333692] [drl_env]: 🎯 Goal reached!
+[INFO] [1775251972.784742066] [drl_env]: 🎯 Goal reached!
+[INFO] [1775252181.052758690] [drl_env]: 🎯 Goal reached!
+[Ep  180/250]  goal=(-2.40,+2.00)  reward= -580.66  c_loss=71.8480  a_loss=108.7294  steps=81421
+[INFO] [1775252372.186353953] [drl_env]: 🎯 Goal reached!
+[INFO] [1775252467.357537083] [drl_env]: 🎯 Goal reached!
+[INFO] [1775252476.091739498] [drl_env]: 🎯 Goal reached!
+[Ep  190/250]  goal=(+2.41,-2.13)  reward= -415.99  c_loss=64.1813  a_loss=106.8229  steps=86016
+[INFO] [1775252779.879364242] [drl_env]: 🎯 Goal reached!
+[INFO] [1775252919.892365936] [drl_env]: 🎯 Goal reached!
+[INFO] [1775252932.655652553] [drl_env]: 🎯 Goal reached!
+[INFO] [1775252975.849606541] [drl_env]: 🎯 Goal reached!
+[INFO] [1775253031.770696884] [drl_env]: 🎯 Goal reached!
+[INFO] [1775253034.184068368] [drl_env]: 🎯 Goal reached!
+[INFO] [1775253063.107543963] [drl_env]: 🎯 Goal reached!
+[Ep  200/250]  goal=(+1.68,+2.25)  reward= -638.59  c_loss=90.1521  a_loss=106.9478  steps=90517
+TD3 model saved → model_td3_diverse_ep200.pt
+TD3 model saved → model_td3_diverse.pt
+[INFO] [1775253229.974760141] [drl_env]: 🎯 Goal reached!
+[INFO] [1775253240.412281083] [drl_env]: 🎯 Goal reached!
+[INFO] [1775253457.813770400] [drl_env]: 🎯 Goal reached!
+[INFO] [1775253522.847418577] [drl_env]: 🎯 Goal reached!
+[Ep  210/250]  goal=(-1.45,+1.64)  reward= -553.49  c_loss=117.2024  a_loss=106.9176  steps=95096
+[INFO] [1775253570.933884268] [drl_env]: 🎯 Goal reached!
+[INFO] [1775253880.187896253] [drl_env]: 🎯 Goal reached!
+[Ep  220/250]  goal=(-2.04,-1.17)  reward= -375.97  c_loss=138.7556  a_loss=106.5163  steps=99258
+[INFO] [1775254105.252705110] [drl_env]: 🎯 Goal reached!
+🎯 Using random goals (first: -1.44, 2.03)
+TD3Agent on device: cuda
+State dim: 26  |  Action dim: 2
+Linear vel: [0.0, 0.22]  Angular vel: [-2.0, 2.0]
+TD3 model loaded ← model_td3_diverse.pt
+Resuming from saved model_td3_diverse.pt 🔄
+
+=======================================================
+ TurtleBot3 TD3 Training  |  250 episodes
+=======================================================
+
+[Ep   10/250]  goal=(-1.55,+0.67)  reward= -516.52  c_loss=64.1581  a_loss=89.3245  steps=5000
+[Ep   20/250]  goal=(-1.37,+0.09)  reward= -540.62  c_loss=57.6350  a_loss=91.5851  steps=9654
+[Ep   30/250]  goal=(-0.26,-1.09)  reward= -315.81  c_loss=63.7875  a_loss=82.5795  steps=13742
+[Ep   40/250]  goal=(-2.10,+2.22)  reward= -596.73  c_loss=41.0463  a_loss=86.3068  steps=18674
+[Ep   50/250]  goal=(+1.22,-0.10)  reward= -719.30  c_loss=48.1634  a_loss=93.2354  steps=23674
+TD3 model saved → model_td3_diverse_ep50.pt
+TD3 model saved → model_td3_diverse.pt
+[Ep   60/250]  goal=(-1.61,-1.36)  reward= -618.64  c_loss=50.6354  a_loss=95.4440  steps=28674
+[Ep   70/250]  goal=(+1.60,-1.58)  reward= -718.80  c_loss=51.9614  a_loss=99.0536  steps=33674
+[Ep   80/250]  goal=(-0.91,-1.75)  reward= -359.11  c_loss=86.3060  a_loss=97.9854  steps=37859
+[Ep   90/250]  goal=(-0.07,-2.20)  reward= -668.93  c_loss=43.2405  a_loss=99.3657  steps=42859
+[Ep  100/250]  goal=(-2.49,+1.51)  reward= -473.73  c_loss=49.6778  a_loss=98.5842  steps=47658
+TD3 model saved → model_td3_diverse_ep100.pt
+TD3 model saved → model_td3_diverse.pt
+[Ep  110/250]  goal=(-1.40,-0.22)  reward= -696.72  c_loss=55.3534  a_loss=100.5296  steps=52658
+[Ep  120/250]  goal=(+1.31,-0.36)  reward= -397.26  c_loss=63.6219  a_loss=99.7377  steps=56907
+[Ep  130/250]  goal=(-1.76,-1.77)  reward= -413.54  c_loss=68.8624  a_loss=99.9530  steps=60845
+[Ep  140/250]  goal=(+2.01,-0.42)  reward= -631.31  c_loss=70.8264  a_loss=101.0670  steps=65461
+[Ep  150/250]  goal=(+2.22,+0.72)  reward= -599.42  c_loss=66.8286  a_loss=102.3802  steps=70008
+TD3 model saved → model_td3_diverse_ep150.pt
+TD3 model saved → model_td3_diverse.pt
+[Ep  160/250]  goal=(-2.49,-1.51)  reward= -446.32  c_loss=76.2430  a_loss=103.3298  steps=73721
+[Ep  170/250]  goal=(+0.80,-1.48)  reward= -562.94  c_loss=73.0491  a_loss=101.7062  steps=78721
+[Ep  180/250]  goal=(-1.18,-1.54)  reward= -407.65  c_loss=67.9977  a_loss=101.4424  steps=83211
+[Ep  190/250]  goal=(-2.39,+2.09)  reward= -598.21  c_loss=64.5980  a_loss=102.4922  steps=88211
+[Ep  200/250]  goal=(-1.51,+1.70)  reward= -481.82  c_loss=65.8271  a_loss=100.6276  steps=93013
+TD3 model saved → model_td3_diverse_ep200.pt
+TD3 model saved → model_td3_diverse.pt
+[Ep  210/250]  goal=(+1.88,-0.48)  reward= -576.45  c_loss=60.5436  a_loss=101.0846  steps=97817
+[Ep  220/250]  goal=(+0.45,-1.55)  reward= -443.77  c_loss=58.0560  a_loss=101.6241  steps=102180
+[Ep  230/250]  goal=(+1.86,+2.45)  reward= -305.60  c_loss=76.7154  a_loss=101.0678  steps=105712
+[Ep  240/250]  goal=(+1.21,+1.93)  reward= -573.43  c_loss=72.8029  a_loss=101.3829  steps=110214
+[Ep  250/250]  goal=(+2.28,-0.60)  reward= -749.57  c_loss=79.9995  a_loss=104.0766  steps=115214
+TD3 model saved → model_td3_diverse_ep250.pt
+TD3 model saved → model_td3_diverse.pt
+TD3 model saved → model_td3_diverse_interrupted.pt
+TD3 model saved as model_td3_diverse.pt
+[INFO] [1775254175.769858503] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254201.701610348] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254229.554056660] [drl_env]: 🎯 Goal reached!
+[Ep  230/250]  goal=(+2.17,+2.12)  reward= -337.09  c_loss=89.0041  a_loss=105.2623  steps=103360
+[INFO] [1775254241.567822613] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254262.770517358] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254267.361933970] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254297.587130000] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254320.714020356] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254347.596156702] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254363.016629520] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254384.879540812] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254398.555267371] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254407.945925936] [drl_env]: 🎯 Goal reached!
+[Ep  240/250]  goal=(-0.74,-1.40)  reward=  +26.52  c_loss=86.3486  a_loss=103.3538  steps=105444
+[INFO] [1775254415.514196644] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254442.413749740] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254458.511683892] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254477.074663526] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254495.248574218] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254517.643614030] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254537.826731258] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254560.080249424] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254574.948379806] [drl_env]: 🎯 Goal reached!
+[INFO] [1775254595.650729826] [drl_env]: 🎯 Goal reached!
+[Ep  250/250]  goal=(+1.84,-1.48)  reward=   +4.78  c_loss=97.9890  a_loss=101.8028  steps=107642
+TD3 model saved → model_td3_diverse_ep250.pt
+TD3 model saved → model_td3_diverse.pt
+TD3 model saved → model_td3_diverse_interrupted.pt
+TD3 model saved as model_td3_diverse.pt
