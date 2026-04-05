@@ -9,15 +9,14 @@ docker cp "$(dirname "$0")/../worlds/hospital_world.world" \
 docker cp "$(dirname "$0")/../launch/turtlebot3_hospital.launch.py" \
   ros2_container:/root/turtlebot3_hospital.launch.py
 
-docker exec ros2_container bash -c '
-  pkill -9 -f demo_continuous 2>/dev/null || true
-  pkill -9 -f nav2_goal_bridge 2>/dev/null || true
-  pkill -9 -f "ros2 launch" 2>/dev/null || true
-  pkill -9 gzserver 2>/dev/null || true
-  pkill -9 gzclient 2>/dev/null || true
-  pkill -9 rviz2 2>/dev/null || true
-  sleep 2
-'
+docker exec ros2_container bash -c \
+  "pkill -9 -f '[d]emo_continuous' 2>/dev/null || true; \
+   pkill -9 -f '[n]av2_goal_bridge' 2>/dev/null || true; \
+   pkill -9 -f '[r]os2 launch' 2>/dev/null || true; \
+   pkill -9 gzserver 2>/dev/null || true; \
+   pkill -9 gzclient 2>/dev/null || true; \
+   pkill -9 rviz2 2>/dev/null || true; \
+   sleep 2"
 
 docker exec -e DISPLAY="${DISPLAY:-:0}" -e TURTLEBOT3_MODEL=burger -d ros2_container bash -c \
   'source /opt/ros/humble/setup.bash && ros2 launch /root/turtlebot3_hospital.launch.py'
