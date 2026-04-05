@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""TurtleBot3 Burger in openstreet.world (minimal canvas; add props in Gazebo).
+"""TurtleBot3 Burger in openstreet.world.
 
-Gzserver only — start GUI with scripts/container/start_gzclient_gui.sh (see turtlebot3_openstreet.launch.py).
+Gzserver only — do not start gzclient here. In Docker, a second gzclient causes
+Ogre crash: Light 'sun' already exists. Start the GUI with scripts/container/start_gzclient_gui.sh
+(or run_openstreet_rviz_goals.sh).
 """
 import os
 

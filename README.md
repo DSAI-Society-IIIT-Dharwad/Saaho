@@ -8,10 +8,10 @@ ROS 2 **Humble**, **Gazebo**, and a **Twin Delayed DDPG (TD3)** policy drive a *
 
 | Area | Description |
 |------|-------------|
-| **Simulation** | Custom Gazebo worlds: training layouts (0–3), **main open arena** (`open_world`), **open street**, **hospital**. |
+| **Simulation** | Custom Gazebo worlds: training layouts (0–3), **open street** (minimal `openstreet.world` canvas + your props), **hospital**. |
 | **Learning** | Off-policy continuous control: **TD3** actor–critic, 26-D state (24 LiDAR samples + distance + heading to goal), 2-D velocity action. |
 | **Training** | **Phase 1:** TD3 on **layout 0 only**, **1000 episodes**. **Phase 2:** same algorithm on **four** distinct obstacle layouts with **random goals**, **1000 episodes**, **~12 hours** (GPU). |
-| **Evaluation** | After diverse training, the policy was **tested qualitatively** on **hospital**, **main open arena** (`open_world`), and **open street**—worlds not identical to the training grid layouts. |
+| **Evaluation** | After diverse training, the policy was **tested qualitatively** on **hospital** and **open street**—worlds not identical to the training grid layouts. |
 | **Deployment** | `demo_continuous.py` loads **`model_td3_diverse.pt`** and follows goals from RViz (`/goal`, `/move_base_simple/goal`, etc.). |
 | **Baseline** | Discrete **DQN** path (`train.py`, `agent.py`) for comparison; TD3 is primary for smooth continuous motion. |
 
@@ -28,8 +28,7 @@ ROS 2 **Humble**, **Gazebo**, and a **Twin Delayed DDPG (TD3)** policy drive a *
 3. **Testing after training**  
    The **final diverse checkpoint** was exercised in simulation on:
    - **`hospital_world.world`** — multi-room interior (hard for map-free TD3; mainly qualitative / stress test).
-   - **Main open arena** — **`open_world.world`** (large fenced plane: main “agenda” demo / open-area goals).
-   - **`open_street.world`** — richer street-style scene with varied props.
+   - **`openstreet.world`** — minimal **30×30** fenced plane + sun; add obstacles in Gazebo **Insert** for custom scenes (replaces the old heavy saved world and separate `open_world` arena).
 
    These are **out-of-distribution** relative to the tight training layouts; they show how far the LiDAR + goal policy generalizes without a map.
 
@@ -72,9 +71,9 @@ Hexagonal-style arena with a **3×3 grid of targets** and LiDAR (blue rays); **p
 
 ![Layout 3](images/layout3.png)
 
-### Open street — `open_street.world`
+### Open street — `openstreet.world`
 
-Street-style scene (walls, trees, cones, props); used for **post-training** testing and demos.
+Minimal **30×30** ground, boundary walls, and **model://sun**. Use Gazebo’s **Insert** tab to add models; save a new `.world` if you want a fixed layout. **`open_street.world`** in the repo is the same minimal template under another name.
 
 ![Open street](images/open_street.png)
 
@@ -83,10 +82,6 @@ Street-style scene (walls, trees, cones, props); used for **post-training** test
 Multi-room floor plan (beds, desks, partitions); **post-training** test. Long **room-to-room** behavior usually needs **Nav2 / a map**, not map-free TD3 alone.
 
 ![Hospital](images/hospital.png)
-
-### Main open arena — `open_world.world`
-
-Large **30×30**-style fenced arena (no separate figure in `images/`; same role as the main open-area test beside hospital and open street). Launch via your `open_world` / copy-into-container workflow as in `worlds/open_world.world`.
 
 ---
 
@@ -105,7 +100,7 @@ Numbers below come from **`trained_models/DIVERSE_TRAINING_RESULTS.md`** for the
 
 **Saved artifact:** `trained_models/model_td3_diverse.pt` (plus logs/checkpoints in `trained_models/`).
 
-**Takeaway:** Phase 2 **reduces** memorization of layout 0 and **improves** behavior when both **layout** and **goal** change; hospital / open street / open arena testing shows **limits** of a map-free policy on large structured maps.
+**Takeaway:** Phase 2 **reduces** memorization of layout 0 and **improves** behavior when both **layout** and **goal** change; hospital / open street testing shows **limits** of a map-free policy on large structured maps.
 
 ---
 
@@ -148,7 +143,7 @@ python3 train_td3_diverse.py      # phase 2: four layouts + random goals
 
 | Path | Role |
 |------|------|
-| `worlds/` | `turtlebot3_layout0–3`, `open_world`, `open_street`, `hospital_world` |
+| `worlds/` | `turtlebot3_layout0–3`, `openstreet`, `open_street`, `hospital_world` |
 | `launch/` | `turtlebot3_hospital.launch.py`, layout / open_street launches |
 | `drone_rl/env.py` | ROS environment + reward |
 | `drone_rl/agent_td3.py` | TD3 |

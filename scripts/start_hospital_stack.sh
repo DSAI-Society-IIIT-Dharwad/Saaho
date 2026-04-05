@@ -22,6 +22,8 @@ docker exec -e DISPLAY="${DISPLAY:-:0}" -e TURTLEBOT3_MODEL=burger -d ros2_conta
   'source /opt/ros/humble/setup.bash && ros2 launch /root/turtlebot3_hospital.launch.py'
 
 sleep 28
+docker cp "$(dirname "$0")/../config/rviz_config.rviz" \
+  ros2_container:/workspace/config/rviz_config.rviz
 docker exec -e DISPLAY="${DISPLAY:-:0}" -d ros2_container bash -c \
   'source /opt/ros/humble/setup.bash && rviz2 -d /workspace/config/rviz_config.rviz'
 docker exec -d ros2_container bash -c \

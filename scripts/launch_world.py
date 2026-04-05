@@ -2,7 +2,7 @@
 Flexible TurtleBot3 launch — accepts any world file.
 
 Usage inside container:
-  python3 launch_world.py open_world
+  python3 launch_world.py openstreet
   python3 launch_world.py turtlebot3_layout1
   python3 launch_world.py turtlebot3_house
   python3 launch_world.py turtlebot3_dqn_stage4
@@ -16,8 +16,9 @@ WORLDS_DIR = "/opt/ros/humble/share/turtlebot3_gazebo/worlds"
 ROBOT_DESC = "/opt/ros/humble/share/turtlebot3_gazebo/urdf/turtlebot3_burger.urdf"
 
 KNOWN = {
-    "open":       "open_world.world",
-    "open_world": "open_world.world",
+    "open":       "openstreet.world",
+    "openstreet": "openstreet.world",
+    "open_street": "openstreet.world",
     "hospital":   "hospital_world.world",
     "hospital_world": "hospital_world.world",
     "layout1":    "turtlebot3_layout1.world",

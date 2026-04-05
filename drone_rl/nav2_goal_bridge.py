@@ -1,31 +1,32 @@
 """
 nav2_goal_bridge.py — Optional NavigateToPose action server for Nav2 *panel* workflows.
 
-In ROS 2 Humble, nav2_rviz_plugins/GoalTool does NOT send goals to an action server
-directly; it forwards to the Nav2 RViz *panel*, which then calls NavigateToPose.
-Without that full panel stack, the drag tool does nothing useful.
-
-**Recommended:** use rviz_default_plugins/SetGoal (publishes PoseStamped to
-`/move_base_simple/goal`) or Publish Point on `/goal` — see `config/rviz_config.rviz`.
-
-This node still helps if you add the Navigation 2 panel and point it at `/navigate_to_pose`.
+Nav2 "2D Goal Pose" needs the **Navigation 2** RViz panel plus this bridge (action
+`/navigate_to_pose`). `config/rviz_config.rviz` includes both (use `rviz_tb3_navigation2_openstreet.rviz` only if Nav2/map_server is running). Alternatively use
+**Set Goal** → `/move_base_simple/goal` or **Publish Point** → `/goal` with
+`demo_continuous.py` only.
 """
 
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, HistoryPolicy
 from rclpy.action import ActionServer, CancelResponse, GoalResponse
 from rclpy.action.server import ServerGoalHandle
 from geometry_msgs.msg import PointStamped
 from nav2_msgs.action import NavigateToPose
-import threading
 
 
 class Nav2GoalBridge(Node):
     def __init__(self):
         super().__init__("nav2_goal_bridge")
 
-        # Publish forwarded goals to the same topic the demo listens on
-        self.goal_pub = self.create_publisher(PointStamped, "/goal", 10)
+        _q = QoSProfile(
+            depth=10,
+            reliability=ReliabilityPolicy.RELIABLE,
+            durability=DurabilityPolicy.VOLATILE,
+            history=HistoryPolicy.KEEP_LAST,
+        )
+        self.goal_pub = self.create_publisher(PointStamped, "/goal", _q)
 
         # Fake NavigateToPose action server
         self._action_server = ActionServer(
