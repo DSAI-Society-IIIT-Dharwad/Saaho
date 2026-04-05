@@ -10,6 +10,7 @@ Fixes:
 import rclpy
 from rclpy.node import Node
 from rclpy.executors import SingleThreadedExecutor, ExternalShutdownException
+from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, HistoryPolicy
 from sensor_msgs.msg import LaserScan, Imu
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist, PoseStamped, PointStamped
@@ -29,6 +30,13 @@ MAX_Z_HEIGHT    = 0.10   # metres — reset if robot gets knocked airborne
 WAYPOINT_STEP   = 1.2    # metres — max distance per sub-goal waypoint
 STUCK_DIST      = 0.08   # metres — if robot moves less than this in STUCK_TIME, it's stuck
 STUCK_TIME      = 8.0    # seconds — how long to wait before declaring stuck
+
+_GOAL_QOS = QoSProfile(
+    depth=10,
+    reliability=ReliabilityPolicy.RELIABLE,
+    durability=DurabilityPolicy.VOLATILE,
+    history=HistoryPolicy.KEEP_LAST,
+)
 
 # Reactive safety (no reset — just steers/slows away from obstacles)
 SAFETY_SLOW_DIST = 0.30  # metres — start scaling down linear velocity
@@ -60,9 +68,9 @@ class ContinuousDemoNode(Node):
         self.create_subscription(LaserScan,    "/scan",                  self._scan_cb,  10)
         self.create_subscription(Odometry,     "/odom",                  self._odom_cb,  10)
         self.create_subscription(Imu,          "/imu",                   self._imu_cb,   10)
-        self.create_subscription(PoseStamped,  "/goal_pose",             self._goal_cb,  10)
-        self.create_subscription(PoseStamped,  "/move_base_simple/goal", self._goal_cb,  10)
-        self.create_subscription(PointStamped, "/goal",                  self._point_goal_cb, 10)
+        self.create_subscription(PoseStamped,  "/goal_pose",             self._goal_cb,  _GOAL_QOS)
+        self.create_subscription(PoseStamped,  "/move_base_simple/goal", self._goal_cb,  _GOAL_QOS)
+        self.create_subscription(PointStamped, "/goal",                  self._point_goal_cb, _GOAL_QOS)
 
         self.vel_pub = self.create_publisher(Twist, "/cmd_vel", 10)
         self._reset_client = self.create_client(Empty, "/reset_world")
