@@ -8,11 +8,30 @@ ROS 2 **Humble**, **Gazebo**, and a **Twin Delayed DDPG (TD3)** policy drive a *
 
 | Area | Description |
 |------|-------------|
-| **Simulation** | Custom Gazebo worlds: training layouts (0–3), open arena / street scene, multi-room hospital. |
+| **Simulation** | Custom Gazebo worlds: training layouts (0–3), **main open arena** (`open_world`), **open street**, **hospital**. |
 | **Learning** | Off-policy continuous control: **TD3** actor–critic, 26-D state (24 LiDAR samples + distance + heading to goal), 2-D velocity action. |
-| **Training** | Single-layout TD3 (`train_td3.py`), then **diverse** training across **four** obstacle worlds with **random goals** (`train_td3_diverse.py`). |
+| **Training** | **Phase 1:** TD3 on **layout 0 only**, **1000 episodes**. **Phase 2:** same algorithm on **four** distinct obstacle layouts with **random goals**, **1000 episodes**, **~12 hours** (GPU). |
+| **Evaluation** | After diverse training, the policy was **tested qualitatively** on **hospital**, **main open arena** (`open_world`), and **open street**—worlds not identical to the training grid layouts. |
 | **Deployment** | `demo_continuous.py` loads **`model_td3_diverse.pt`** and follows goals from RViz (`/goal`, `/move_base_simple/goal`, etc.). |
 | **Baseline** | Discrete **DQN** path (`train.py`, `agent.py`) for comparison; TD3 is primary for smooth continuous motion. |
+
+---
+
+## Training timeline (how we did it)
+
+1. **First training — layout 0 only**  
+   Single static world **`turtlebot3_layout0.world`**, **1000 episodes**, fixed curriculum on that geometry. This established a working TD3 stack and a baseline policy tuned to one arena.
+
+2. **Second training — four layouts**  
+   **Diverse** training (`train_td3_diverse.py`): cycle through **`turtlebot3_layout0.world` … `turtlebot3_layout3.world`**, **random goal** \((x,y)\) each episode (with a simple “avoid the very center” rule so goals stay reachable). **1000 episodes** total across the four worlds (**~250 episodes per layout**), **~12 hours** on GPU. The same network weights continue from phase 1 so the agent **unlearns overfitting** to layout 0 alone and learns clutter patterns that transfer better.
+
+3. **Testing after training**  
+   The **final diverse checkpoint** was exercised in simulation on:
+   - **`hospital_world.world`** — multi-room interior (hard for map-free TD3; mainly qualitative / stress test).
+   - **Main open arena** — **`open_world.world`** (large fenced plane: main “agenda” demo / open-area goals).
+   - **`open_street.world`** — richer street-style scene with varied props.
+
+   These are **out-of-distribution** relative to the tight training layouts; they show how far the LiDAR + goal policy generalizes without a map.
 
 ---
 
@@ -21,109 +40,106 @@ ROS 2 **Humble**, **Gazebo**, and a **Twin Delayed DDPG (TD3)** policy drive a *
 1. **`env.py`** subscribes to **`/scan`** and **`/odom`**, builds a normalized state (LiDAR downsampled to **24** beams, capped ~**3.5 m**, plus goal distance / heading in **odom**).
 2. **`agent_td3.py`** maps state → **linear** and **angular** velocity; experience replay + twin critics + delayed policy updates.
 3. Rewards encourage reaching the goal and penalize collisions and tight clearance (`env.py`).
-4. **Diverse training** swaps **`turtlebot3_layout0.world` … `layout3.world`** and resamples a random goal each episode so the policy does not memorize one map and one target.
+4. **Diverse training** swaps world files and resamples goals each episode so the policy does not memorize one map and one target.
 
 ---
 
-## Gazebo layouts (with figures)
+## Gazebo layouts (figures)
 
-Screenshots live in **`images/`**. Filenames contain spaces; links below use URL encoding so they render on GitHub.
+All screenshots are in **`images/`** (no spaces in filenames).
 
 ### Layout 0 — `turtlebot3_layout0.world`
 
-Hexagonal arena with a **3×3 grid of targets** and a LiDAR-equipped agent (perimeter vs center views). Used as one of four training geometries in the diverse curriculum.
+Hexagonal-style arena with a **3×3 grid of targets** and LiDAR (blue rays); **phase-1** training used **only** this layout (1000 episodes).
 
-![Layout 0](images/image.png)
+![Layout 0](images/layout0.png)
 
 ### Layout 1 — `turtlebot3_layout1.world`
 
-**Eight** white **cylinders** in a loose **V / triangular** pattern; TurtleBot with **360°** LiDAR (blue rays), top-down and perspective. Strong diversity signal for obstacle shadows and gaps.
+**Eight** white **cylinders** in a loose **V / triangular** pattern; **360°** LiDAR, top-down and perspective.
 
-![Layout 1](images/image%20copy.png)
+![Layout 1](images/layout1.png)
 
 ### Layout 2 — `turtlebot3_layout2.world`
 
-**Eight** cylinders in a **ring**; same LiDAR visualization. Stresses symmetric clutter and encircled free space.
+**Eight** cylinders in a **ring**; symmetric clutter and encircled free space.
 
-![Layout 2](images/image%20copy%202.png)
+![Layout 2](images/layout2.png)
 
 ### Layout 3 — `turtlebot3_layout3.world`
 
-**Five** cylinders **spread** across the grid (corners / sides). Fewer obstacles but more open variation; tests generalization to sparse layouts.
+**Five** cylinders **spread** across the grid (corners / sides); sparser obstacles.
 
-![Layout 3](images/image%20copy%203.png)
+![Layout 3](images/layout3.png)
 
-### Open street — `open_street.world` / open arena
+### Open street — `open_street.world`
 
-Larger **street-style** scene: walls, trees, cones, props; LiDAR interacting with varied meshes. Suitable for free-form goals and editing in SDF.
+Street-style scene (walls, trees, cones, props); used for **post-training** testing and demos.
 
-![Open street layout](images/image%20copy%204.png)
+![Open street](images/open_street.png)
 
 ### Hospital — `hospital_world.world`
 
-**Multi-room** interior: beds, desks, partitions. Map-free TD3 is **weak** here for long room-to-room tasks; this world is better paired with **Nav2 / mapping** or hierarchical planning. Still useful for sensing visualization and future hybrid work.
+Multi-room floor plan (beds, desks, partitions); **post-training** test. Long **room-to-room** behavior usually needs **Nav2 / a map**, not map-free TD3 alone.
 
-![Hospital layout](images/image%20copy%205.png)
+![Hospital](images/hospital.png)
+
+### Main open arena — `open_world.world`
+
+Large **30×30**-style fenced arena (no separate figure in `images/`; same role as the main open-area test beside hospital and open street). Launch via your `open_world` / copy-into-container workflow as in `worlds/open_world.world`.
 
 ---
 
-## Training results (diverse TD3)
+## Training results (phase 2 — four layouts)
 
-Summarized from **`trained_models/DIVERSE_TRAINING_RESULTS.md`** (run completed **April 4, 2026**):
+Numbers below come from **`trained_models/DIVERSE_TRAINING_RESULTS.md`** for the **1000-episode four-layout** run (aligned with phase 2; wall time in that log was ~8 h—use **~12 h** if that matches your machine).
 
 | Metric | Value |
 |--------|--------|
 | Algorithm | **TD3** |
-| Total episodes | **1000** (250 per layout × 4 layout files) |
-| Approx. duration | ~**8 hours** (GPU) |
+| Phase 2 episodes | **1000** (≈250 per layout × 4) |
 | Random goals | \(x, y \in [-2.5, 2.5]\), avoiding a central obstacle band |
 | **Overall success** (goal reached) | **32.7%** (327 / 1000) |
 | Best single-layout success | ~**43–44%** on two layouts |
-| vs single-layout + fixed goal | Much higher on that one point; **poor** on random goals without diverse training |
+| Phase 1 (layout 0 only, 1000 ep) | Baseline before diversity; strong on that geometry, weaker on random goals until phase 2 |
 
-**Saved artifact:** `trained_models/model_td3_diverse.pt` (and episodic checkpoints / logs in the same folder).
+**Saved artifact:** `trained_models/model_td3_diverse.pt` (plus logs/checkpoints in `trained_models/`).
 
-**Takeaway:** Diverse layouts + random goals **hurt** peak performance on a memorized target but **improve** robustness when the scene and goal change—consistent with the report’s ~**3×** improvement on random-goal evaluation vs the earlier single-layout model.
+**Takeaway:** Phase 2 **reduces** memorization of layout 0 and **improves** behavior when both **layout** and **goal** change; hospital / open street / open arena testing shows **limits** of a map-free policy on large structured maps.
 
 ---
 
 ## Why TD3 (and not DQN only)
 
-- TurtleBot control is **continuous** (velocities). **TD3** outputs real-valued actions; **DQN** in this repo uses a **small discrete** action set, which is coarser for steering.
-- **TD3** (clipped double Q, delayed policy, target smoothing) is a standard stable choice for **continuous** robot benchmarks with replay buffers.
+- Control is **continuous** (velocities). **TD3** outputs real-valued actions; **DQN** here uses a **small discrete** action set → coarser steering.
+- **TD3** (clipped double Q, delayed policy, target smoothing) is a standard choice for continuous control with replay.
 
 ---
 
 ## Quick start (Docker + hospital demo)
 
-Prerequisites: **`ros2_container`** built from this repo’s **`DockerFile`**, X11 (`xhost +local:docker`), **`DISPLAY`** set.
+Prerequisites: **`ros2_container`** from **`DockerFile`**, X11 (`xhost +local:docker`), **`DISPLAY`** set.
 
 ```bash
-# Hospital world + RViz + nav goal bridge + TD3 demo (see script for details)
 ./scripts/start_hospital_stack.sh
 ```
 
-**Default TurtleBot3 house world** (stock package):
+**Stock TurtleBot3 house world:**
 
 ```bash
 docker exec -e DISPLAY=$DISPLAY -e TURTLEBOT3_MODEL=burger -d ros2_container bash -lc \
   'source /opt/ros/humble/setup.bash && ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py'
 ```
 
-**Custom layouts** — copy **`worlds/*.world`** and the matching **`launch/turtlebot3_<name>.launch.py`** into the container, then:
+**Custom layouts** — copy **`worlds/*.world`** and **`launch/turtlebot3_*.launch.py`** into the container, then e.g. `ros2 launch /root/turtlebot3_layout1.launch.py`.
 
-```bash
-ros2 launch /root/turtlebot3_layout1.launch.py   # example
-```
-
-(Exact paths depend on where you `docker cp` the launch file.)
-
-**Training inside the container** (with Gazebo up or as scripted in `train_td3_diverse.py`):
+**Training (container):**
 
 ```bash
 cd /workspace/drone_rl
 source /opt/ros/humble/setup.bash
-python3 train_td3_diverse.py
+python3 train_td3.py              # phase-1 style: one world, fixed goal (when Gazebo is that world)
+python3 train_td3_diverse.py      # phase 2: four layouts + random goals
 ```
 
 ---
@@ -132,26 +148,26 @@ python3 train_td3_diverse.py
 
 | Path | Role |
 |------|------|
-| `worlds/` | SDF worlds: `turtlebot3_layout0–3`, `open_world`, `open_street`, `hospital_world` |
-| `launch/` | `turtlebot3_hospital.launch.py`, per-layout / open_street launch files |
+| `worlds/` | `turtlebot3_layout0–3`, `open_world`, `open_street`, `hospital_world` |
+| `launch/` | `turtlebot3_hospital.launch.py`, layout / open_street launches |
 | `drone_rl/env.py` | ROS environment + reward |
-| `drone_rl/agent_td3.py` | TD3 networks + training step |
+| `drone_rl/agent_td3.py` | TD3 |
 | `drone_rl/train_td3.py` | Single-world training |
-| `drone_rl/train_td3_diverse.py` | Multi-layout + random goals |
-| `drone_rl/demo_continuous.py` | Live demo with RViz goals |
+| `drone_rl/train_td3_diverse.py` | Four layouts + random goals |
+| `drone_rl/demo_continuous.py` | Live demo + RViz goals |
 | `trained_models/` | Weights + `DIVERSE_TRAINING_RESULTS.md` |
-| `images/` | Figures for this README |
+| `images/` | `layout0.png` … `layout3.png`, `open_street.png`, `hospital.png` |
 
 ---
 
-## Limitations (honest)
+## Limitations
 
-- Policy is **map-free**: no occupancy grid or topology—**room-to-room** hospital navigation is not the strong suit of the raw TD3 demo.
-- State uses **24** LiDAR bins and ~**3.5 m** clamping—fine detail and distant structure are compressed.
-- Reported **32.7%** success on the hard mixed curriculum is real progress but **not** “solved navigation.”
+- **Map-free** policy: weak on long **room-to-room** hospital tasks without Nav2 / mapping.
+- **24** LiDAR bins, **~3.5 m** clamp — compressed geometry.
+- **32.7%** on the mixed 1000-ep curriculum is progress, not solved navigation.
 
 ---
 
 ## Credits
 
-Course / team project **Saaho**; implementation spans simulation, TD3 training, diverse curricula, and hospital / street world assets. Figures in **`images/`** document layouts and LiDAR behavior in Gazebo.
+Project **Saaho** — simulation, two-phase TD3 training, diverse layouts, and evaluation on **hospital**, **main open arena**, and **open street**.
