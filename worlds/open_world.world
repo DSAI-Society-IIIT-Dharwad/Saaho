@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="open_world">
+
+    <!-- Physics -->
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+
+    <!-- Lighting -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Large ground plane -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>30 30</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>30 30</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Boundary walls (invisible fence so robot doesn't fall off) -->
+    <!-- North wall -->
+    <model name="wall_north">
+      <static>true</static>
+      <pose>0 7.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>15 0.2 1</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>15 0.2 1</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Wood</name></script></material>
+        </visual>
+      </link>
+    </model>
+    <!-- South wall -->
+    <model name="wall_south">
+      <static>true</static>
+      <pose>0 -7.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>15 0.2 1</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>15 0.2 1</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Wood</name></script></material>
+        </visual>
+      </link>
+    </model>
+    <!-- East wall -->
+    <model name="wall_east">
+      <static>true</static>
+      <pose>7.5 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.2 15 1</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>0.2 15 1</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Wood</name></script></material>
+        </visual>
+      </link>
+    </model>
+    <!-- West wall -->
+    <model name="wall_west">
+      <static>true</static>
+      <pose>-7.5 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.2 15 1</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>0.2 15 1</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Wood</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
