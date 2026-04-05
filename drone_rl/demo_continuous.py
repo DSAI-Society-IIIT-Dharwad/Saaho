@@ -73,15 +73,17 @@ class ContinuousDemoNode(Node):
 
     def _scan_cb(self, msg):
         s = np.array(msg.ranges, dtype=np.float32)
-        self.scan = np.nan_to_num(s, nan=3.5, posinf=3.5, neginf=0.0)
+        # Match env.py LiDAR preprocessing
+        self.scan = np.nan_to_num(s, nan=3.5, posinf=3.5)
 
     def _odom_cb(self, msg):
         self.robot_x   = msg.pose.pose.position.x
         self.robot_y   = msg.pose.pose.position.y
         self.robot_z   = msg.pose.pose.position.z
-        qz = msg.pose.pose.orientation.z
-        qw = msg.pose.pose.orientation.w
-        self.robot_yaw = math.atan2(2.0 * qw * qz, 1.0 - 2.0 * qz * qz)
+        q = msg.pose.pose.orientation
+        siny = 2.0 * (q.w * q.z + q.x * q.y)
+        cosy = 1.0 - 2.0 * (q.y * q.y + q.z * q.z)
+        self.robot_yaw = math.atan2(siny, cosy)
 
     def _imu_cb(self, msg):
         """Extract roll and pitch from IMU quaternion."""
@@ -120,16 +122,18 @@ class ContinuousDemoNode(Node):
     # ── helpers ──────────────────────────────────────────────────────────
 
     def get_state(self):
+        """Must match env.py get_state() normalisation exactly (trained policy distribution)."""
         if self.scan is None:
             return None
-        step         = max(1, len(self.scan) // N_SCAN_SAMPLES)
-        scan_samples = self.scan[::step][:N_SCAN_SAMPLES]
-        dx           = self.goal_x - self.robot_x
-        dy           = self.goal_y - self.robot_y
-        goal_dist    = math.sqrt(dx*dx + dy*dy)
-        goal_angle   = math.atan2(dy, dx) - self.robot_yaw
-        goal_angle   = math.atan2(math.sin(goal_angle), math.cos(goal_angle))
-        return np.concatenate([scan_samples, [goal_dist, goal_angle]]).astype(np.float32)
+        idx = np.linspace(0, len(self.scan) - 1, N_SCAN_SAMPLES, dtype=int)
+        scan_samples = (self.scan[idx] / 3.5).astype(np.float32)
+        dx = self.goal_x - self.robot_x
+        dy = self.goal_y - self.robot_y
+        goal_dist = math.sqrt(dx * dx + dy * dy) / 4.0
+        ang = math.atan2(dy, dx) - self.robot_yaw
+        ang = (ang + math.pi) % (2 * math.pi) - math.pi
+        goal_angle = ang / math.pi
+        return np.append(scan_samples, [np.float32(goal_dist), np.float32(goal_angle)]).astype(np.float32)
 
     def check_goal(self):
         dx, dy = self.goal_x - self.robot_x, self.goal_y - self.robot_y

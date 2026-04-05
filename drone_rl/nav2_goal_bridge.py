@@ -1,9 +1,14 @@
 """
-nav2_goal_bridge.py — Makes the RViz Nav2 Goal drag tool work without Nav2.
+nav2_goal_bridge.py — Optional NavigateToPose action server for Nav2 *panel* workflows.
 
-Acts as a fake NavigateToPose action server.
-When the user drags a goal arrow in RViz, this bridge catches it
-and publishes the position to /goal (PointStamped) for the demo.
+In ROS 2 Humble, nav2_rviz_plugins/GoalTool does NOT send goals to an action server
+directly; it forwards to the Nav2 RViz *panel*, which then calls NavigateToPose.
+Without that full panel stack, the drag tool does nothing useful.
+
+**Recommended:** use rviz_default_plugins/SetGoal (publishes PoseStamped to
+`/move_base_simple/goal`) or Publish Point on `/goal` — see `config/rviz_config.rviz`.
+
+This node still helps if you add the Navigation 2 panel and point it at `/navigate_to_pose`.
 """
 
 import rclpy
